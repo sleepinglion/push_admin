@@ -1,0 +1,42 @@
+<section class="sl_show">
+	<p>
+		<b><%=t(:login_id,scope:[:activerecord,:attributes,:operator]) %></b>
+		<%= @operator.login_id %>
+	</p>
+	<p>
+		<b><%=t(:label_privilege) %></b>
+				<% if @operator.roles_admin.exists? %>
+				<%=@operator.role[0].title %>
+				<% else %>
+				권한없음
+				<% end %>
+	</p>
+	<p>
+		<b><%=t(:nickname,scope:[:activerecord,:attributes,:operator]) %></b>
+		<% if @operator.nickname.present? %><%=@operator.nickname %><% else %><%=t(:no_insert_data) %><% end %>
+	</p>
+	<p>
+		<b><%=t(:email,scope:[:activerecord,:attributes,:operator]) %></b>
+		<% if @operator.email.present? %><%=mail_to @operator.email %><% else %><%=t(:no_insert_data) %><% end %>
+	</p>
+	<p>
+		<b><%=t(:sign_in_count,scope:[:activerecord,:attributes,:operator]) %></b>
+		<%=@operator.sign_in_count %>
+	</p>
+	<p>
+		<b><%=t(:enable,scope:[:activerecord,:attributes,:operator]) %></b>
+		<%=raw flagToString(@operator.enable) %>
+	</p>
+	<p>
+		<b><%=t(:label_created_at) %></b>
+		<%= @operator.created_at %>
+	</p>
+	<p>
+		<b><%=t(:label_updated_at) %></b>
+		<%= @operator.created_at %>
+	</p>
+</section>
+<% if can? :update, @operator %>
+<%= link_to t(:link_edit), edit_admin_operator_path(@operator) %> |
+<% end %>
+<%= link_to t(:link_list), admin_operators_path %>

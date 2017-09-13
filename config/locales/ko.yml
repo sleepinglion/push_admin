@@ -1,0 +1,560 @@
+ko:
+  service_name : '인용 푸쉬'
+  meta_description : '병원을 통하지 않고 소비자가 직접 유전자 검사를 하여 자신의 상태를 알고서 이에 따라 관리가 가능합니다.'
+  meta_description_intro : '제노솔루션은 최고의 유전자검사기관입니다.'
+  meta_description_supports : '제노솔루션의 고객지원을 위한 페이지입니다.'
+  meta_description_orders : '제노솔루션 유전자검사 신청하기 페이지입니다.'
+  meta_keywords : 'DTC,유전자,유전자검사,유전자분석,유전자관리,유전자검사기관,유전자분석서비스,클리노믹스,clinomics'
+  meta_image : 'http://www.sleepinglion.pe.kr/sl.jpg'
+  meta_url : 'http://inyong.sleepinglion.pe.kr'
+  title_separator : '-'
+  default_title : '푸시관리자'
+
+  korean : '한국어'
+  chineses : '중국어'
+  english : '영어'
+
+  hello : '안녕하세요'
+  welcome : '님 환영합니다'
+  admin_profile : '내정보 수정'
+  amount: '수량'
+  active: '활성'
+  end : '종료'
+  complete : '완료'
+  cancel : '취소'
+  home : '홈'
+  home_title : '인용푸쉬'
+  home_main_title : '인용이가 푸쉬~ 호프쑤왕'
+  home_main_description : '인용이가 푸쉬하는 사이트입니다.'
+  home_more_description : '깨끗한 웹세상을 꿈꿉니다.'
+  back_to_home : '메인으로 돌아가기'
+  search : '검색'
+  update : '수정'
+  image : '이미지'
+  default: '기본'
+  description : '설명'
+  male : '남자'
+  female : '여자'
+  foreigner : '외국인'
+  success : '성공'
+  fail : '실패'
+  agree_agreement : '약관 동의하기'
+  order_form_submit : '주문하기'
+  related_gene_description : '관여 유전자 상세설명'
+  user_error : '가지 문제로'
+  sorry_but_error : '더이상 진행할 수 없습니다.'
+  gene : '유전자'
+  italic : '기울림'
+  none : '없음'
+  click : 'click'
+  show_detail : '상세내용 확인하기 ▶'
+  insert_info : '정보 입력'
+  more : 'more'
+  close_popup : '창닫기'
+  times : '번'
+  confirm : '확인'
+  unconfirmed : '미확인'
+  delete : '삭제'
+  first_check_your_email_availability : '먼저 이메일 사용가능 여부를 확인하세요'
+  maker : '잠자는사자'
+  user_login : '로그인'
+  remember_me : '기억하기'
+
+  send_now : '바로 전송'
+  send_schedule : '예약 전송'
+  sms_status0 : '메세지 입력'
+  sms_status1 : '처리 시작'
+  sms_status2 : '서버 전송중'
+  sms_status3 : '발송 완료'
+  sms_status_fail : '실패'
+  send_target : '수신자'
+  all_send : '전체전송'
+  select_send : '선택전송'
+  exclude_send : '전체(제외자 선택) 전송'
+  select_insert : '선택입력'
+  show_10 : '10개씩 보기'
+  show_20 : '20개씩 보기'
+  show_30 : '30개씩 보기'
+  show_50 : '50개씩 보기'
+  show_100 : '100개씩 보기'
+  send_multimedia : '이미지전송'
+  not_send : '사용안함'
+  send : '사용'
+  all_send_include_exception : '전체전송(전송안함 제외)'
+  no_send : '전송안함'
+  find_by_email : '이메일로 찾기'
+  find_by_name : '이름으로 찾기'
+
+  user_id: '사용자 ID'
+  count_default : '개'
+  count_thing : '건'
+  count_peple : '명'
+  count_address : '건'
+  subject: '제목'
+  summary: '요약'
+  for: '을(를)'
+  id: 'ID'
+  login : '로그인'
+  logout : '로그아웃'
+  flag_true : '사용'
+  flag_false : '중지'
+
+  login_page : '로그인 페이지'
+  login_title : '관리자 로그인'
+  login_p_id : '아이디를 입력하세요'
+  login_p_email : '이메일을 입력하세요'
+  login_p_password : '비밀번호를 입력하세요'
+  login_remember : '기억해줘'
+
+  period_today : '오늘'
+  period_week : '일주일'
+  period_month : '1개월'
+  period_month3 : '3개월'
+  period_month6 : '6개월'
+  period_all : '전체'
+  current_month : '이번달'
+
+  success_title : '축하합니다!!'
+  error_title : '죄송합니다'
+  message_success_insert : '(이)(가) 성공적으로  등록되었습니다.'
+  message_success_update : '(이)(가) 성공적으로  수정되었습니다.'
+  message_success_delete : '(이)(가) 성공적으로 삭제되었습니다.'
+  delete_confirm : '정말로삭제합니까?'
+  delete_cascade_confirm : "중대 경고!!\n이 항목을 삭제할 경우 이 항목뿐아니라 이 항목의 정보를 포함하는 모든 데이터가 삭제됩니다.\n그래도 진행하시겠습니까?"
+  alert_no_auth_title : '해당 행동에 대한 권한이 없습니다.'
+  alert_no_auth_description : '만약 당신이 권한이 있음에도 이 메세지가 나온다면 관리자에게 문의하십시오.'
+  login_first : '먼저 로그인을 해주세요'
+
+  all_select : '전체선택'
+  all_deselect : '전체해지'
+  user_id_find  : '사용자 ID 검색'
+  download_reports: '선택된것 다운로드'
+  insert_search_word : '검색어를 넣어주세요'
+
+  menu_user : '회원관리'
+  menu_push : '푸쉬관리'
+  menu_new_user : '회원가입'
+
+  action_index : '목록'
+  action_show : '상세'
+  action_edit : '수정'
+  action_new : '생성'
+
+  link_delete_admin : '계정삭제'
+  link_list : '목록으로'
+  link_new : '새로작성'
+  link_show : '상세보기'
+  link_edit : '수정'
+  link_delete : '삭제'
+  link_new_one: '직접입력'
+
+  label_number : '번호'
+  label_address : '주소'
+  label_created_at : '등록일시'
+  label_updated_at : '수정일시'
+  label_manage : '관리'
+  label_email : '이메일'
+  label_password : '비밀번호'
+  label_category : '분류'
+  label_description : '설명'
+  label_content : '내용'
+  label_user_id : '회원 ID'
+  label_login_id : '아이디'
+  label_count : '갯수'
+  label_export_count : '출력 건수'
+  label_export_at : '출력시간'
+  label_last_export_at : '최종 출력시간'
+  label_last_export_ip : '최종 출력 IP'
+  label_ip : 'IP'
+  label_privilege : '권한'
+  label_lastlogin : '마지막로그인'
+  label_period_search : '기간검색'
+
+  no_data : '해당 데이터가 없습니다.'
+  not_insert : '미입력'
+  no_exists_member : '아직 결과지가 완성되지 않았거나 해당 회원의 정보가 없습니다.'
+  no_exists_privilege : '권한없음'
+  no_exists_position : "%{index}행에 %{position}(이)가 없습니다"
+  no_exists_genotype : "%{genotype}는 해당위치(%{position})에 존재하지 않는 genotype입니다."
+  no_exists_barcode : '바코드 정보가 일치하지 않습니다. 다시 한번 확인 후 입력해 주시길 바랍니다.<br />바코드 정보가 지속적으로 입력되지 않으면 고객상담에 문의해주시길 바랍니다.'
+  not_allow_insert_same_user_id_and_related_action_id : '같은 사용자-관련작용(이미 존재함)은 입력할 수 없습니다.'
+
+  report_complete_title : 'GenoSolution 리포트 완성 알림 메세지'
+
+  result_detail : '상세결과'
+  result_total_description : '결과값 종합설명'
+
+  ckeditor:
+    page_title: "CKEditor Files Manager"
+    confirm_delete: "파일을 지웁니까?"
+    buttons:
+      cancel: "취소"
+      upload: "업로드"
+      delete: "삭제"
+
+  devise:
+    confirmations:
+      confirmed: "이메일 주소가 성공적으로 인증되었습니다."
+      new:
+        resend_confirmation_instructions: "인증 안내 재발송"
+      send_instructions: "이메일로 이메일 주소 인증 안내가 발송되었습니다."
+      send_paranoid_instructions: "이메일 주소가 존재한다면 메일로 이메일 인증 안내 메일을 받을 수 있습니다."
+    failure:
+      already_authenticated: "이미 로그인되어 있습니다."
+      inactive: "계정이 아직 활성화되지 않았습니다."
+      invalid: "이메일 혹은 비밀번호가 틀립니다."
+      last_attempt: "이번 로그인 시도를 실패하면 계정이 잠깁니다."
+      locked: "계정이 잠겨있습니다."
+      not_found_in_database: "이메일 주소나 비밀번호가 틀립니다."
+      timeout: "시간이지나 자동로그아웃되었습니다. 계속하려면 다시 로그인해야 합니다."
+      unauthenticated: "계속하려면 로그인하거나 가입해야 합니다."
+      unconfirmed: "계속하기 전에 이메일 주소를 인증해야 합니다."
+    mailer:
+      confirmation_instructions:
+        action: "본인 계정 인증"
+        greeting: "%{recipient}님 환영합니다!"
+        instruction: "아래의 링크를 클릭하시면 이메일 인증이 완료됩니다:"
+        subject: "이메일 인증 안내"
+      password_change:
+        greeting:
+        message:
+        subject:
+      reset_password_instructions:
+        action: "이 링크를 클릭하시면 비밀번호 재 설정 페이지로 이동합니다."
+        greeting: "%{recipient}님 안녕하세요!"
+        instruction: "안녕하세요 GenoSolution 비밀번호 재 설정 안내입니다."
+        instruction_2: "비밀번호 변경을 요청하지 않으셨다면 이 메일을 무시하십시오."
+        instruction_3: "위 링크에 접속하여 새로운 비밀번호를 생성하기 전까지 귀하의 비밀번호는 변경되지 않습니다."
+        subject: "GenoSolution 비밀번호 재 설정 안내입니다."
+      unlock_instructions:
+        action: "본인 계정 잠금 해제"
+        greeting: "%{recipient}님 안녕하세요!"
+        instruction: "계정 잠금을 해제하려면 아래 링크를 클릭하세요."
+        message: "로그인 실패 횟수 초과로 귀하의 계정이 잠금 처리되었습니다."
+        subject: "잠금 해제 안내"
+    omniauth_callbacks:
+      failure: "%{reason}(으)로 인하여 %{kind}(으)로부터 인증받지 못했습니다."
+      success: "%{kind} 계정으로부터 인증되었습니다."
+    passwords:
+      edit:
+        change_my_password: "내 비밀번호를 변경합니다"
+        change_your_password: "비밀번호 변경"
+        confirm_new_password: "새 비밀번호 확인"
+        new_password: "새 비밀번호"
+      new:
+        forgot_your_password: "비밀번호를 잊으셨나요?"
+        send_me_reset_password_instructions: "비밀번호 재설정 안내를 요청합니다"
+      no_token: "비밀번호 재설정 이메일을 거치지 않고 이 페이지에 접근할 수 없습니다. 비밀번호 재설정 이메일에서 오셨다면, 주소가 제대로 되었는지 확인해 주세요."
+      send_instructions: "잠시 후에 비밀번호 재설정 안내 메일을 받을 수 있습니다."
+      send_paranoid_instructions: "이메일이 데이터베이스에 존재할 경우, 몇 분 안에 비밀번호 재설정 주소를 이메일로 받으실 수 있습니다."
+      updated: "성공적으로 비밀번호를 변경했습니다. 로그인 되었습니다."
+      updated_not_active: "비밀번호가 성공적으로 변경되었습니다."
+    registrations:
+      destroyed: "안녕히 가세요! 계정이 성공적으로 탈퇴되었습니다. 다시 볼 수 있기를 바랍니다."
+      edit:
+        are_you_sure: "정말로 탈퇴하시겠습니까?"
+        cancel_my_account: "회원 탈퇴"
+        currently_waiting_confirmation_for_email: "현재 다음 이메일 인증 대기중입니다: %{email}"
+        leave_blank_if_you_don_t_want_to_change_it: "변경을 원하지 않으시면 빈 칸으로 남겨주세요"
+        title: "%{resource} 정보 수정"
+        unhappy: "회원 탈퇴를 하시겠습니까?"
+        update: "변경"
+        we_need_your_current_password_to_confirm_your_changes: "변경 사항을 반영하려면 현재의 비밀번호를 입력하세요"
+      new:
+        sign_up: "회원 가입"
+      signed_up: "환영합니다! 성공적으로 가입되었습니다."
+      signed_up_but_inactive: "성공적으로 가입되었지만, 아직 계정이 활성화되어 있지 않아 로그인 할 수 없습니다."
+      signed_up_but_locked: "성공적으로 가입되었지만, 계정이 잠겨있어 로그인 할 수 없습니다."
+      signed_up_but_unconfirmed: "인증 주소가 포함된 메시지를 이메일 주소로 보냈습니다. 계정을 활성화하기 위해 메일을 확인하세요."
+      update_needs_confirmation: "계정이 성공적으로 수정되었지만, 새로운 이메일 주소를 확인해야 합니다. 이메일로 전송된 이메일 인증 주소를 클릭하여 새로운 이메일 주소를 인증해 주세요."
+      updated: "계정이 성공적으로 수정되었습니다."
+    sessions:
+      already_signed_out: "성공적으로 로그아웃되었습니다."
+      new:
+        sign_in: "로그인"
+      signed_in: "성공적으로 로그인되었습니다."
+      signed_out: "성공적으로 로그아웃되었습니다."
+    shared:
+      links:
+        back: "돌아가기"
+        didn_t_receive_confirmation_instructions: "인증 이메일을 못받으셨나요?"
+        didn_t_receive_unlock_instructions: "잠금 해제 이메일을 못받으셨나요?"
+        forgot_your_password: "비밀번호를 잊으셨나요?"
+        sign_in: "로그인"
+        sign_in_with_provider: "%{provider}(으)로 로그인"
+        sign_up: "회원 가입"
+    unlocks:
+      new:
+        resend_unlock_instructions: "계정 잠금 해제 재요청"
+      send_instructions: "잠시 후 이메일로 계정 잠금 해제 안내를 받아보실 수 있습니다."
+      send_paranoid_instructions: "계정이 존재한다면 메일로 계정 잠금 해제 안내를 받을 수 있습니다."
+      unlocked: "계정이 성공적으로 잠금 해제되었습니다. 로그인하여 계속해 주세요."
+
+  views :
+    pagination :
+      truncate : '&nbsp;...&nbsp;'
+      previous : '이전'
+      last : '마지막'
+      next : '다음'
+      first : '처음'
+  date:
+    abbr_day_names:
+    - 일
+    - 월
+    - 화
+    - 수
+    - 목
+    - 금
+    - 토
+    abbr_month_names:
+    -
+    - 1월
+    - 2월
+    - 3월
+    - 4월
+    - 5월
+    - 6월
+    - 7월
+    - 8월
+    - 9월
+    - 10월
+    - 11월
+    - 12월
+    day_names:
+    - 일요일
+    - 월요일
+    - 화요일
+    - 수요일
+    - 목요일
+    - 금요일
+    - 토요일
+    formats:
+      default: ! '%Y/%m/%d'
+      long: ! '%Y년 %m월 %d일 (%a)'
+      short: ! '%m/%d'
+    month_names:
+    -
+    - 1월
+    - 2월
+    - 3월
+    - 4월
+    - 5월
+    - 6월
+    - 7월
+    - 8월
+    - 9월
+    - 10월
+    - 11월
+    - 12월
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: 약 한 시간
+        other: 약 %{count}시간
+      about_x_months:
+        one: 약 한 달
+        other: 약 %{count}달
+      about_x_years:
+        one: 약 일 년
+        other: 약 %{count}년
+      almost_x_years:
+        one: 일 년 이하
+        other: ! '%{count}년 이하'
+      half_a_minute: 30초
+      less_than_x_minutes:
+        one: 일 분 이하
+        other: ! '%{count}분 이하'
+      less_than_x_seconds:
+        one: 일 초 이하
+        other: ! '%{count}초 이하'
+      over_x_years:
+        one: 일 년 이상
+        other: ! '%{count}년 이상'
+      x_days:
+        one: 하루
+        other: ! '%{count}일'
+      x_minutes:
+        one: 일 분
+        other: ! '%{count}분'
+      x_months:
+        one: 한 달
+        other: ! '%{count}달'
+      x_seconds:
+        one: 일 초
+        other: ! '%{count}초'
+    prompts:
+      day: 일
+      hour: 시
+      minute: 분
+      month: 월
+      second: 초
+      year: 년
+  errors: &errors
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: 을(를) 반드시 확인해야 합니다
+      blank: 에 내용을 입력해 주세요
+      confirmation: 은(는) 서로 일치해야 합니다
+      empty: 에 내용을 입력해 주세요
+      equal_to: 은(는) %{count}과 같아야 합니다
+      even: 에 짝수를 입력해 주세요
+      exclusion: 은(는) 이미 예약되어 있는 값입니다
+      greater_than: 은(는) %{count}보다 커야 합니다
+      greater_than_or_equal_to: 은(는) %{count}보다 크거야 같아야 합니다
+      inclusion: 은(는) 목록에 포함되어 있는 값이 아닙니다
+      invalid: 은(는) 올바르지 않은 값입니다
+      less_than: 은(는) %{count}보다 작아야 합니다
+      less_than_or_equal_to: 은(는) %{count}과 작거나 같아야 합니다
+      not_a_number: 에 숫자를 입력해 주세요
+      not_an_integer: 에 정수를 입력해 주세요
+      odd: 에 홀수를 입력해 주세요
+      record_invalid: 데이터 검증에 실패하였습니다. %{errors}
+      taken: 은(는) 이미 존재합니다.
+      too_long: 은(는) %{count}자를 넘을 수 없습니다
+      too_short: 은(는) 적어도 %{count}자를 넘어야 합니다
+      wrong_length: 은(는) %{count}자여야 합니다
+    template:
+      body: ! '다음 항목에 문제가 발견되었습니다:'
+      header:
+        one: 한 개의 오류가 발생해 %{model}를 저장 할 수 없습니다
+        other: ! '%{count}개의 오류가 발생해 %{model}를 저장 할 수 없습니다'
+  helpers:
+    select:
+      prompt: 선택해주세요
+    submit:
+      create: 등록
+      submit: 제출
+      update: 수정
+  number:
+    currency:
+      format:
+        delimiter: ! ','
+        format: ! '%n%u'
+        precision: 0
+        separator: .
+        significant: false
+        strip_insignificant_zeros: false
+        unit: 원
+    format:
+      delimiter: ! ','
+      precision: 3
+      separator: .
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n%u'
+        units:
+          billion: 십억
+          million: 백만
+          quadrillion: 경
+          thousand: 천
+          trillion: 조
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n%u'
+        units:
+          byte: 바이트
+          gb: 기가바이트
+          kb: 킬로바이트
+          mb: 메가바이트
+          tb: 테라바이트
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ', '
+      two_words_connector: ! '와(과) '
+      words_connector: ! ', '
+  time:
+    am: 오전
+    formats:
+      default: ! '%Y/%m/%d %H:%M:%S'
+      long: ! '%Y년 %B월 %d일, %H시 %M분 %S초 %Z'
+      short: ! '%y/%m/%d %H:%M'
+    pm: 오후
+  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
+  activemodel:
+    errors:
+      <<: *errors
+  activerecord:
+    models:
+      admin : '관리자'
+      user : '회원'
+      group : '회원 구분'
+      operator : '운영자'
+      device : '회원푸쉬토큰'
+      push_message : '푸시'
+      push_prepare_picture : '준비된 이미지'
+      push_prepare_message : '준비된 메시지'
+
+    attributes :
+      admin :
+        login_id : '아이디'
+        nickname : '별명'
+        email : 'E-Mail'
+        password : '비밀번호'
+        password_confirmation : '비밀번호 확인'
+        current_password : '현재 비밀번호'
+        photo : '사진'
+        enable : '사용여부'
+      operator :
+        login_id : '아이디'
+        nickname : ' 별명'
+        email : 'E-Mail'
+        password : '비밀번호'
+        password_confirmation : '비밀번호 확인'
+        sign_in_count : '로그인수'
+        photo : '사진'
+        enable : '사용여부'
+      group :
+        title : '제목'
+        users_count : '해당 사용자 갯수'
+        enable : '사용여부'
+      push_message :
+        title : '제목'
+        content : 'MMS 메세지'
+      push_prepare_picture :
+        photo : '이미지'
+        enable : '사용여부'
+      push_prepare_message :
+        title : '제목'
+        content : '내용'
+        enable : '사용여부'
+      device :
+        user_id : '사용자'
+        device_id : '장치 ID'
+        registration_id : '등록 ID'
+      user :
+        group_id : '회원구분'
+        login_id : '아이디'
+        name : '이름'
+        password : '비밀번호'
+        password_confirmation : '비밀번호 확인'
+        phone : '전화번호'
+        birthday : '생년월일'
+        sex : '성별'
+        sign_in_count : '로그인 횟수'
+        last_sign_in_at : '마지막 로그인'
+        current_password : '현재비밀번호'
+        enable : '사용여부'
+
+    errors:
+      models :
+        user :
+          attributes :
+            login_id :
+              not_found : '해당 이메일이 존재하지 않습니다'

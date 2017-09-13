@@ -1,0 +1,9 @@
+<% breadcrumb :delete_user %>
+<section class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-offset-4 col-md-9 col-md-pull-1 col-xl-offset-0 col-xl-pull-0 col-xl-12">
+      <h2><%=t(:delete_user) %></h2>
+      <%= button_to t(:delete_user), registration_path(@user), :data => { :confirm => t(:delete_user_confirm)}, :method => :delete, :class=>"btn btn-lg btn-danger" %>
+    </div>
+  </div>
+</section>

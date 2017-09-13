@@ -1,0 +1,73 @@
+<% breadcrumb :user_check_barcode %>
+<section id="user_check_barcode" class="container sl_section_type1">
+    <div class="row hidden-xs hidden-sm">
+      <ol id="report_process_p" class="col-xs-12 col-md-offset-4 col-md-9 col-md-pull-1 col-xl-offset-0 col-xl-pull-0 col-xl-12">
+        <li class="before"><%=t(:report_process1) %><span>&#9654;</span></li>
+        <li class="active"><%=t(:report_process2) %><span>&#9654;</span></li>
+        <li><%=t(:report_process3) %></li>
+      </ol>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-offset-4 col-md-9 col-md-pull-1 col-xl-offset-0 col-xl-pull-0 col-xl-12">
+        <h2 class="col-xs-12"><%=t(:user_check_barcode) %></h2>
+        <p class="col-xs-12 description">
+            <%=current_user.name %><%=t(:welcome) %>
+            <br>
+                <%=t(:regist_product_description) %></br />
+            <span class="red"><%=t(:regist_product_description_alert) %></span>
+        </p>
+      </div>
+      <div class="col-xs-12 col-md-offset-4 col-md-9 col-md-pull-1 col-xl-offset-0 col-xl-pull-0 col-xl-12">
+        <% if @user.errors.any? %>
+        <div class="col-xs-12">
+      		<div id="error_explanation" class="alert alert-danger">
+      			<a href="#" class="close" data-dismiss="alert">&times;</a>
+      			<ul>
+      				<% @user.errors.full_messages.each do |msg| %>
+      				<li style="list-style:none"><%=raw msg %></li>
+      				<% end %>
+      			</ul>
+      		</div>
+        </div>
+      	<% end %>
+        <% if @kit.present? %>
+        <%=form_tag users_validate_barcode_path,{:method=>"post",:class=>"col-xs-12"} do %>
+        <article class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><%= t(:user_check_barcode) %></h3>
+            </div>
+            <div class="panel-body">
+                <%=image_tag 'barcode.jpg',:width=>186,:height=>63 %>
+                <div class="form-group"><%= label_tag :barcode,t(:label_check_barcode) %>
+                    <%= text_field_tag :barcode,'',:autofocus => true, :placeholder=>t(:insert_your_barcode),:class=>"form-control input-lg" %>
+                </div>
+            </div>
+        </article>
+        <div class="form-group">
+            <%= submit_tag t(:user_check_barcode),:class=>"btn btn-lg btn-block btn-primary" %>
+        </div>
+        <% end %>
+        <% else %>
+        <article class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><%= t(:user_data_default_insert) %></h3>
+            </div>
+            <div class="panel-body">
+                <%=image_tag 'barcode.jpg',:width=>186,:height=>63 %>
+                <div class="form-group"><%= label_tag :barcode,t(:label_check_barcode) %>
+                    <%= text_field_tag :barcode,'',:autofocus => true, :placeholder=>t(:insert_your_barcode), :class=>"form-control input-lg",:disabled=>'disabled' %>
+                </div>
+            </div>
+        </article>
+        <div class="form-group">
+            <%= button_tag t(:user_check_barcode),:class=>"btn btn-lg btn-block btn-disable" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <% unless @kit.present? %>
+    <script>
+      alert('아직 보내주신 검체 기트가 도착하지 않았습니다'+"\n"+'검체가 도착하면 문자로 안내해 드리겠습니다.');
+    </script>
+    <% end %>
+</section>

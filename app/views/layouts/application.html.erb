@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="<%=I18n.locale %>">
+<head>
+<meta charset="utf-8" />
+<%=display_meta_tags :site => t(:service_name),
+	:title=>@title,
+	:description => @meta_description,
+	:keywords => @meta_keywords,
+	:separator => t(:title_separator),
+	:viewport => 'width=device-width, initial-scale=1.0, user-scalable=yes',
+	:reverse => true %>
+<%=display_meta_tags og: {
+  	title:   @title,
+  	description: @meta_description,
+  	url:      @meta_url,
+  	image:    @meta_image
+	} %>
+<meta name="author" content="Sleeping-Lion" />
+<%= stylesheet_link_tag "application", :media=>"all", "data-turbolinks-track" => true %>
+<%= favicon_link_tag 'favicon.ico' %>
+<%= csrf_meta_tags %>
+<!--[if IE]>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<![endif]-->
+</head>
+<body itemscope itemtype="<%=@page_itemtype %>">
+<%= render :partial => 'layouts/header' %>
+<div id="mom">
+	<div id="main" class="container">
+		<% if current_page?(root_path) %>
+		<div class="jumbotron hero-unit">
+			<h2><%=raw t(:home_main_title) %></h2>
+			<p class="lead"><%=raw t(:home_main_description) %></p>
+			<%=link_to t(:home_more_description),'/home/popup',:class=>'modal_link btn btn-large btn-success',:'data-toggle'=>"modal",:'data-target'=>"#myModal" %>
+		</div>
+		<hr class="none">
+		<div class="row">
+			<div id="main_main" class="sub_main col-xs-12">
+		<% else %>
+			<%= render 'layouts/page_header' %>
+			<div class="row">
+				<div class="sub_main col-xs-12">
+		<% end %>
+		<% if notice %>
+		<%= render 'layouts/notice',:locals=>{:notice=>notice} %>
+		<% end %>
+		<% if alert %>
+		<%= render 'layouts/alert',:locals=>{:alert=>alert} %>
+		<% end %>
+
+				<%=yield %>
+				</div>
+				<%= render 'layouts/aside' %>
+		</div>
+	</div>
+</div>
+<%= render :partial => 'layouts/footer' %>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true"></div>
+<%= javascript_include_tag 'application', "data-turbolinks-track" => true %>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<section id="gene_analysis_agree_page">
+  ■ 생명윤리 및 안전에 관한 법률 시행규칙 [별지 제52호서식]
+  <h3>유전자검사 동의서</h3>
+  <table>
+    <colgroup>
+      <col style="width:20%" />
+      <col style="width:10%" />
+      <col />
+      <col style="width:15%" />
+      <col style="width:15%" />
+    </colgroup>
+    <tr>
+      <th rowspan="3">검 사 대 상 자</th>
+      <th>성명</th>
+      <td>
+        <% if user %>
+        <%=user.name %>
+        <% end %>
+      </td>
+      <th class="last"<% unless user %> colspan="2"<% end %>>생년월일</th>
+      <% if user %>
+      <td><%=user.birthday %></td>
+      <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th>주소</th>
+      <td colspan="3">
+        <% if user %>
+        (<%=user.order.shipping.zip_code %>) <%=user.order.shipping.address_default %> <%=user.order.shipping.address_detail %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th>전화번호</th>
+      <td>
+        <% if user %>
+        <%=user.order.shipping.phone %>
+        <% end %>
+      </td>
+      <th  class="last"<% unless user %> colspan="2"<% end %>>성별</th>
+      <% if user %>
+      <td><%=sexToString user.sex %></td>
+      <% end %>
+    </tr>
+  </table>
+
+  <table>
+    <colgroup>
+      <col style="width:20%" />
+      <col style="width:10%" />
+      <col />
+      <col style="width:15%" />
+      <col style="width:15%" />
+    </colgroup>
+    <tr>
+      <th rowspan="2">법 정 대 리 인</th>
+      <th>성명</th>
+      <td></td>
+      <th class="last"<% unless user %> colspan="2"<% end %>>관계</th>
+        <% if user %>
+      <td>
+      <% if user.kid? %>
+      &nbsp;
+      <% end %>
+      </td>
+      <% end %>
+    </tr>
+    <tr>
+      <th>전화번호</th>
+      <td colspan="3">&nbsp;</td>
+    </tr>
+  </table>
+
+  <table>
+    <colgroup>
+      <col style="width:20%" />
+      <col style="width:10%" />
+      <col />
+    </colgroup>
+    <tr>
+      <th rowspan="2">유전자 검사기관</th>
+      <th>기관명</th>
+      <td><b>주식회사 클리노믹스</b></td>
+    </tr>
+    <tr>
+      <th>전화번호</th>
+      <td><b>070-8286-6966</b></td>
+    </tr>
+  </table>
+
+  <table>
+    <colgroup>
+      <col style="width:20%" />
+      <col style="width:10%" />
+      <col />
+    </colgroup>
+    <tr>
+      <th rowspan="2">유전자 검사항목</th>
+      <th>검사목적</th>
+      <td><b>보건복지부 고시 제2016-7호에 따른 46가지 유전자 검사에 따른 12가지 신체적 특징 분석</b></td>
+    </tr>
+    <tr>
+      <th>검사명</th>
+      <td><b>Genosolution 유전자 검사</b></td>
+    </tr>
+  </table>
+
+  <div id="sign_section">
+    <p class="i_agree">본인은 [생명윤리 및 안전에 관한 법률] 제 51조 및 같은 법 시행규칙 제 51조에 따라 해당 유전자 검사에 대하여 충분한 설명을 들어 이해하였으므로 위와 같이 본인에 대한 유전자검사에 자발적인 의사로 등의합니다.</p>
+    <div class="sign_form">
+      <p>
+        <% if user %>
+        <%=raw user.created_at.strftime("%Y년&nbsp;%m월&nbsp;%d일") %>
+        <% else %>
+        <%=Time.current.year %>년&nbsp;<%=Time.current.month %>월&nbsp;<%=Time.current.day %>일
+        <% end %>
+      </p>
+      <dl>
+        <dt>검사대상자</dt>
+        <dd>
+          <% if user %>
+          <%=image_tag user.sign,{:width=>100} %>
+          <% else %>
+          (서명 또는 인)
+          <% end %>
+        </dd>
+      </dl>
+      <dl>
+        <dt>법정대리인</dt>
+        <dd>(서명 또는 인)</dd>
+      </dl>
+      <dl>
+        <dt>상담자</dt>
+        <dd>(서명 또는 인)</dd>
+      </dl>
+    </div>
+<p>※ 동일한 대상 및 목적을 위한 추가적인 유전자검사에 대해서는 별도의 동의서 작성 없이 아래 서명만 추가할 수 있습니다.</p>
+    <div class="sign_form">
+      <p class="sign_time">
+        <% if user %>
+        <%=raw user.created_at.strftime("%Y년&nbsp;%m월&nbsp;%d일") %>
+        <% else %>
+        <%=Time.current.year %>년&nbsp;<%=Time.current.month %>월&nbsp;<%=Time.current.day %>일
+        <% end %>
+      </p>
+      <dl>
+        <dt>검사대상자</dt>
+        <dd>(서명 또는 인)</dd>
+      </dl>
+      <dl>
+        <dt>법정대리인</dt>
+        <dd>(서명 또는 인)</dd>
+      </dl>
+      <dl>
+        <dt>상담자</dt>
+        <dd>(서명 또는 인)</dd>
+      </dl>
+    </div>
+    <div class="sign_form">
+      <p class="sign_time">
+        <% if user %>
+        <%=raw user.created_at.strftime("%Y년&nbsp;%m월&nbsp;%d일") %>
+        <% else %>
+        <%=Time.current.year %>년&nbsp;<%=Time.current.month %>월&nbsp;<%=Time.current.day %>일
+        <% end %>
+      </p>
+      <dl>
+        <dt>검사대상자</dt>
+        <dd>(서명 또는 인)</dd>
+      </dl>
+      <dl>
+        <dt>법정대리인</dt>
+        <dd>(서명 또는 인)</dd>
+      </dl>
+      <dl>
+        <dt>상담자</dt>
+        <dd>(서명 또는 인)</dd>
+      </dl>
+    </div>
+    <div class="sign_form">
+      <p class="sign_time">
+        <% if user %>
+        <%=raw user.created_at.strftime("%Y년&nbsp;%m월&nbsp;%d일") %>
+        <% else %>
+        <%=Time.current.year %>년&nbsp;<%=Time.current.month %>월&nbsp;<%=Time.current.day %>일
+        <% end %>
+      </p>
+      <dl>
+        <dt>검사대상자</dt>
+        <dd>(서명 또는 인)</dd>
+      </dl>
+      <dl>
+        <dt>법정대리인</dt>
+        <dd>(서명 또는 인)</dd>
+      </dl>
+      <dl>
+        <dt>상담자</dt>
+        <dd>(서명 또는 인)</dd>
+      </dl>
+    </div>
+  </div>
+
+  <article>
+    <h4>유의사항</h4>
+    <ol>
+      <li>이 유전자검사의 결과는 10년간 보존되며, 법 52조제2항에 따라 본인이나 법정대리인이 요청하는 경우 열람할 수 있습니다.</li>
+      <li>검사 후 남은 검사대상물을 인체유래물연구 또는 허가받은 인체유래물은행에 기증하는 것에 동의하는 경우에는 연구의 목적, 개인정보의 제공에 관한 사항 등 제공에 관한 구체적인 설명을 충분히 듣고, 별지 제 34호의 인체유래물연구 동의서 또는 별지 제 41호의 인체유래물등의 기증 동의서를 추가로 작성하여야 합니다.</li>
+    </ol>
+    <div>
+      <h5>구비서류</h5>
+      <p>법정대리인의 경우 법정대리인임을 증명하는 서류</p>
+    </div>
+  </article>
+
+</section>

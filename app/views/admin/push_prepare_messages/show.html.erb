@@ -1,0 +1,26 @@
+<div class="sl_show">
+	<p>
+		<b><%=t(:title,scope:[:activerecord,:attributes,:push_prepare_message]) %></b>
+		<%= @push_prepare_message.title %>
+	</p>
+	<p>
+		<b><%=t(:content,scope:[:activerecord,:attributes,:push_prepare_message]) %></b>
+		<%= simple_format @push_prepare_message.content %>
+	</p>
+	<p>
+		<b><%=t(:enable,scope:[:activerecord,:attributes,:push_prepare_message]) %></b>
+		<%=raw flagToString(@push_prepare_message.enable) %>
+	</p>
+	<p>
+  	<b><%=t(:label_created_at) %></b>
+  	<%= @push_prepare_message.created_at %>
+  </p>
+  <p>
+  	<b><%=t(:label_updated_at) %></b>
+  	<%= @push_prepare_message.created_at %>
+  </p>
+</div>
+<% if can? :update, @push_prepare_message %>
+<%= link_to t(:link_edit), edit_admin_push_prepare_message_path(@push_prepare_message) %> |
+<% end %>
+<%= link_to t(:link_list), admin_push_prepare_messages_path %>

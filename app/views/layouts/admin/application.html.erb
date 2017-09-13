@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="<%=I18n.locale %>">
+<head>
+	<meta charset="utf-8">
+	<title><%=t(:service_name)%></title>
+	<meta name="description" content="<%=t(:service_name)%> Admin System">
+	<meta name="author" content="Sleeping-Lion">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+	<%= stylesheet_link_tag 'admin/application', :media=>'all', 'data-turbolinks-track' => true %>
+	<%= favicon_link_tag 'favicon.ico' %>
+	<%= csrf_meta_tags %>
+	<!--[if IE]>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<![endif]-->
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script type="text/javascript" src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<%= render :partial => 'layouts/admin/header' %>
+	<div id="mom" class="container-fluid">
+		<div id="main" class="row">
+			<div id="content" class="col-xs-12">
+				<% unless controller.controller_name=='admin' %>
+					<% if(!params[:no_layout] and !current_page?(admin_path)) %>
+						<ol class="breadcrumb">
+							<li><%= link_to t(:home),root_path %></li>
+							<% if(@category.present?) %>
+							<li><a href="#"><%= @category %></a><% if(@controller_name) %><% end %></li>
+							<% end %>
+							<li><a href="#"><%= @controller_name %></a></li>
+							<li><a href="#"><%=actionNameChange controller.action_name %></a></li>
+						</ol>
+						<hr class="hidden-xs" />
+					<% end %>
+					<% end %>
+					<% if notice %>
+					<%= render 'layouts/admin/notice',:locals=>{:notice=>notice} %>
+					<% end %>
+					<% if alert %>
+					<%= render 'layouts/admin/alert',:locals=>{:alert=>alert} %>
+					<% end %>
+						<%= yield %>
+					</div>
+				</div><!--/#content.span10-->
+			</div>
+	<%= render 'layouts/admin/footer' %>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"></div>
+	<%= javascript_include_tag @script %>
+</body>
+</html>

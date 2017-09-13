@@ -1,0 +1,62 @@
+<div class="row">
+	<h3 class="col-xs-12 col-sm-6"><%= @controller_name %> <%= actionNameChange controller.action_name %></h3>
+</div>
+<div class="table-responsive">
+	<table class="table table-bordered table-striped">
+		<colgroup>
+			<col />
+			<col />
+			<col />
+			<col />
+			<% if can?(:update, Device) || can?(:delete, Device) %>
+			<col <%= raw manage_width(Device) %> />
+			<% end %>
+		</colgroup>
+		<thead>
+		<tr>
+			<th><%=t(:user_id,scope:[:activerecord,:attributes,:device]) %></th>
+			<th><%=t(:device_id,scope:[:activerecord,:attributes,:device]) %></th>
+			<th><%=t(:registration_id,scope:[:activerecord,:attributes,:device]) %></th>
+			<th><%=t(:label_created_at) %></th>
+			<% if can? :update, Device %>
+			<th><%= t(:label_manage)%></th>
+			<% end %>
+		</tr>
+		</thead>
+		<tbody>
+		<% unless @devices.empty? %>
+		<% @devices.each do |device| %>
+		<tr>
+			<td><%= device.user.name %></td>
+			<td><%= device.device_id %></td>
+			<td><%= device.registration_id %></td>
+			<td><%= device.created_at %></td>
+			<td> <% if can? :update, Device %>
+			<%= link_to edit_admin_device_path(device),:class=>"btn btn-default" do %> <i class="glyphicon glyphicon-pencil"></i> <%= t(:link_edit) %>
+			<% end %>
+			<% end %>
+			<% if can? :delete, Device %>
+			<%= link_to admin_device_path(device), :method => :delete, :data => { :confirm => t(:delete_confirm) },:class=>"btn btn-danger" do %> <i class="glyphicon glyphicon-trash"></i> <%= t(:link_delete) %>
+			<% end %>
+			<% end %>
+		</td>
+		</tr>
+		<% end %>
+		<% else %>
+		<tr>
+			<td colspan="6"><%=t(:no_data) %></td>
+		</tr>
+		<% end %>
+		</tbody>
+	</table>
+</div>
+<div class="row">
+	<div class="col-xs-6 col-sm-3 col-md2">
+		<% if can? :create, Devise %>
+		<%= link_to new_admin_device_path, :class=>"btn btn-primary" do %>
+		<i class="glyphicon glyphicon-plus"></i> <%= t(:link_new) %>
+		<% end %>
+		<% end %>
+	</div>
+	<%= paginate @devices %>
+</div>

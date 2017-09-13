@@ -1,0 +1,30 @@
+<%= form_for [:admin,@device] do |f| %>
+<% if @device.errors.any? %>
+<div id="error_explanation" class="alert alert-danger">
+	<a href="#" class="close" data-dismiss="alert">&times;</a>
+	<h2><%= pluralize(@device.errors.count, "error") %> prohibited this sponsor from being saved:</h2>
+	<ul>
+		<% @device.errors.full_messages.each do |msg| %>
+		<li>
+			<%= msg %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+  <div class="form-group">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id,:class=>"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :device_id %>
+    <%= f.text_field :device_id,:class=>"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :registration_id %>
+    <%= f.text_field :registration_id,:class=>"form-control" %>
+  </div>
+  <div class="actions">
+			<%= f.submit :class=>'btn btn-primary' %>
+  </div>
+<% end %>

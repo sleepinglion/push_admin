@@ -1,0 +1,26 @@
+<section class="sl_show">
+	<p>
+		<b><%=t(:title,scope:[:activerecord,:attributes,:group]) %></b>
+		<%=@group.title %>
+	</p>
+	<p>
+		<b><%=t(:users_count,scope:[:activerecord,:attributes,:group]) %></b>
+		<%=@group.users_count %>
+	</p>
+	<p>
+		<b><%=t(:enable,scope:[:activerecord,:attributes,:group]) %></b>
+		<%=raw flagToString(@group.enable) %>
+	</p>
+	<p>
+		<b><%=t(:label_created_at) %></b>
+		<%= @group.created_at %>
+	</p>
+	<p>
+		<b><%=t(:label_updated_at) %></b>
+		<%= @group.created_at %>
+	</p>
+</section>
+<% if can? :update, @group %>
+<%= link_to t(:link_edit), edit_admin_group_path(@group) %> |
+<% end %>
+<%= link_to t(:link_list), admin_groups_path %>

@@ -1,0 +1,69 @@
+<%= form_for [:admin,user] do |f| %>
+<% if user.errors.any? %>
+<div id="error_explanation" class="alert alert-danger">
+	<a href="#" class="close" data-dismiss="alert">&times;</a>
+	<h2><%= pluralize(user.errors.count, "error") %> prohibited this sponsor from being saved:</h2>
+	<ul>
+		<% user.errors.full_messages.each do |msg| %>
+		<li>
+			<%= msg %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+<div class="row">
+	<div class="box col-xs-12">
+		<div class="box-header" data-original-title="">
+			<h2><i class="glyphicon glyphicon-align-justify"></i><span class="break"></span> <%= controller_name %></h2>
+			<div class="box-icon">
+				<a href="#" class="btn-minimize"><i class="glyphicon glyphicon-chevron-up"></i></a>
+			</div>
+		</div>
+		<div style="display: block;" class="box-content">
+			<div class="form-group">
+				<%= f.label :group_id %>
+				<%= f.select :group_id,options_from_collection_for_select(Group.where(:enable=>true).all, 'id', 'title',user.group_id),{},{:class=>"form-control"} %>
+			</div>
+			<div class="form-group">
+				<%= f.label :name %>
+				<%= f.text_field :name,:class=>"form-control" %>
+			</div>
+			<div class="form-group">
+				<%= f.label :birthday %>
+				<%= f.date_select :birthday,:start_year=>Time.current.year,:end_year=>Time.current.year-150,:class=>"form-control" %>
+			</div>
+			<div class="form-group">
+				<%= f.label :sex %>
+				<div class="radio">
+					<label>
+  						<%= f.radio_button :sex,true %>	<%=t(:male) %>
+					</label>
+					&nbsp;&nbsp;
+					<label>
+  						<%= f.radio_button :sex,false %> <%=t(:female) %>
+					</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<%=f.label :password %>
+				<%= f.password_field :password,:class=>"form-control", :maxlength=>"60"  %>
+			</div>
+			<div class="form-group">
+				<%=f.label :password_confirmation %>
+				<%= f.password_field :password_confirmation,:class=>"form-control", :maxlength=>"60"  %>
+			</div>
+
+			<div class="form-group">
+				<%= f.label :enable %>
+				<%= f.check_box :enable %>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-12">
+		<div class="form-group">
+			<%= f.submit :class=>'btn btn-primary' %>
+		</div>
+	</div>
+</div>
+<% end %>

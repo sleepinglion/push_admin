@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="<%=I18n.locale %>">
+<head>
+	<meta charset="utf-8">
+	<title><%=t(:service_name)%> <%=t(:login_page) %></title>
+	<meta name="description" content="<%=t(:service_name)%> Admin System Login">
+	<meta name="author" content="Sleeping-Lion">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="<%=asset_path 'favicon.ico' %>">
+	<%= stylesheet_link_tag "admin/application", :media => "all" %>
+	<%= csrf_meta_tags %>
+	<style type="text/css">
+		body { background: url('<%=asset_path 'bg-login.jpg' %>') !important; }
+	</style>
+	<!--[if IE]>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<![endif]-->
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script type="text/javascript" src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="login-box">
+				<h2><%=t(:service_name) %> <%=t(:login_title) %></h2>
+				<%= yield %>
+			</div>
+		</div>
+	</div>
+	<%= javascript_include_tag asset_path 'admin/login.js', "data-turbolinks-track" => true  %>
+</body>
+</html>

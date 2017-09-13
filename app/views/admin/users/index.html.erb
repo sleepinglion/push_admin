@@ -1,0 +1,120 @@
+<div class="row">
+	<div class="box col-xs-12">
+
+	</div>
+</div>
+<div class="table-responsive">
+	<table id="users_table" class="table table-bordered table-striped">
+		<colgroup>
+			<col style="width:50px" />
+			<col />
+			<col />
+			<col />
+			<col />
+			<col />			
+			<col style="width:120px;" />
+			<col />
+			<col style="width:100px;" />
+			<% if can?(:update, User) || can?(:delete, User) %>
+			<col <%= raw manage_width(User) %> />
+			<% end %>
+		</colgroup>
+		<thead>
+			<tr>
+				<th style="text-align:center"><label><input type="checkbox" class="check_all" style="vertical-align:middle" /></label></th>
+				<th><%=t(:login_id,scope:[:activerecord,:attributes,:user]) %></th>
+				<th><%=t(:name,scope:[:activerecord,:attributes,:user]) %></th>
+				<th><%=t(:birthday,scope:[:activerecord,:attributes,:user]) %></th>
+				<th><%=t(:sex,scope:[:activerecord,:attributes,:user]) %> </th>
+				<th><%=t(:device_count,scope:[:activerecord,:attributes,:user]) %> </th>
+				<th><%=t(:sign_in_count,scope:[:activerecord,:attributes,:user]) %></th>
+				<th><%=t(:last_sign_in_at,scope:[:activerecord,:attributes,:user]) %></th>
+				<th><%= t(:label_created_at)%></th>
+				<% if can? :update, User %>
+				<th><%= t(:label_manage)%></th>
+				<% end %>
+			</tr>
+		</thead>
+		<tbody>
+			<% unless @users.empty? %>
+			<% @users.each_with_index do |user,index| %>
+			<tr>
+				<td style="text-align:center"><label><input type="checkbox" value="<%=user.id %>"  style="vertical-align:middle" /></label></td>
+				<td>
+					<% if user.login_id? %>
+					<%= link_to user.login_id,admin_user_path(user) %>
+					<% else %>
+					<%= link_to t(:not_insert),admin_user_path(user) %>
+					<% end %>
+				</td>
+				<td class="mw">
+					<% if user.name? %>
+					<%= link_to user.name,admin_user_path(user) %>
+					<% else %>
+					<%= link_to t(:not_insert),admin_user_path(user) %>
+					<% end %>
+				</td>
+				<td>
+					<% if user.birthday? %>
+					<%= link_to user.birthday,admin_user_path(user) %>
+					<% else %>
+					<%= link_to t(:not_insert),admin_user_path(user) %>
+					<% end %>
+				</td>
+				<td>
+					<%= link_to sexToString(user.sex),admin_user_path(user) %>
+				</td>
+				<td>
+					<%=user.device_count %>
+				</td>
+				<td>
+					<%=user.sign_in_count %>
+				</td>
+				<td>
+					<% if user.last_sign_in_at? %>
+					<%=user.last_sign_in_at %>
+					<% else %>
+					<%=t(:none) %>
+					<% end %>
+				</td>
+				<td><%= user.created_at.to_date %></td>
+				<% if can?(:update, User) || can?(:delete, User) %>
+				<td> <% if can? :update, User %>
+				<%= link_to edit_admin_user_path(user),:class=>"btn btn-default" do %> <i class="glyphicon glyphicon-pencil"></i> <%= t(:link_edit) %>
+				<% end %>
+				<% end %>
+				<% if can? :delete, User %>
+				<%= link_to admin_user_path(user), :method => :delete, :data => { :confirm => t(:delete_confirm) },:class=>"btn btn-danger" do %> <i class="glyphicon glyphicon-trash"></i> <%= t(:link_delete) %>
+				<% end %>
+				<% end %> </td>
+				<% end %>
+			</tr>
+			<% end %>
+			<% else %>
+			<tr>
+				<td colspan="12"><%= t(:no_data)%></td>
+			</tr>
+			<% end %>
+		</tbody>
+
+	</table>
+</div>
+<div class="row">
+	<div class="col-xs-6 col-sm-3 col-md-2">
+		<% if current_admin.role[0].title=='exporter' || current_admin.role[0].title=='operator' %>
+				<% if can? :create, Report %>
+				<%= link_to new_admin_report_path({:csv=>true}),:class=>"btn btn-primary" do %>
+				<i class="glyphicon glyphicon-plus"></i><i class="glyphicon glyphicon-file"></i> <%= t(:link_new_form_csv) %>
+				<% end %>
+				<% end %>
+		<% else %>
+			<% if can? :create, User %>
+			<%= link_to new_admin_user_path,:class=>"btn btn-primary" do %>
+			<i class="glyphicon glyphicon-plus"></i> <%= t(:link_new) %>
+			<% end %>
+			<% end %>
+		<% end %>
+
+	</div>
+	<%= paginate @users %>
+</div>
