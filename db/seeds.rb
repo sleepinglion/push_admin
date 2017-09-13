@@ -18,3 +18,9 @@ RolesAdmin.create!(:role_id=>1,:admin_id=>2)
 RolesAdmin.create!(:role_id=>2,:admin_id=>3)
 RolesAdmin.create!(:role_id=>2,:admin_id=>4)
 RolesAdmin.create!(:role_id=>4,:admin_id=>5)
+
+app = Rpush::Gcm::App.new
+app.name = "android_app"
+app.auth_key = "AAAAMWgqcXM:APA91bFFjJN5CvxPeKMW_sbxh8h3wZ0PDoJYHZzooaZUcbdfB4cuht3FqFevKVF7dojtcCApm77nFN-Mi59BnbRK7yUo3jqxYoW_ofDw55cOCk9zBym5BCAc7M6LvxMChYDGddNfs7fl"
+app.connections = 1
+app.save!

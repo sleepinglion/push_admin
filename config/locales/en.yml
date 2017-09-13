@@ -428,12 +428,13 @@ en:
   activerecord:
     models:
       admin : 'admin'
-      user : 'User'
-      group : 'Group'
-      operator : 'Operator'
-      push_log : 'Push'
-      push_prepare_picture : 'Push Prepare Picture'
-      push_prepare_message : 'Push Prepare Message'
+      user : 'user'
+      group : 'group'
+      operator : 'operator'
+      device : 'device'
+      push_message : 'push_message'
+      push_prepare_picture : 'push_prepare_picture'
+      push_prepare_message : 'push_prepare_message'
 
     attributes :
       admin :
@@ -458,21 +459,16 @@ en:
         title : 'title'
         users_count : 'users count'
         enable : 'enable'
-      push_log :
+      push_message :
         title : 'title'
         content : 'content'
-        schedule_type : 'schedule type'
-        content_data : 'pictures'
-        send_date : 'send date'
-        status : 'status'
-        dest_count : 'desc count'
       push_prepare_picture :
         photo : 'picture'
         enable : 'enable'
       push_prepare_message :
-        title : '제목'
-        content : '내용'
-        enable : '사용여부'
+        title : 'title'
+        content : 'content'
+        enable : 'enable'
       device :
         user_id : 'user'
         device_id : 'device_id'

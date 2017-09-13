@@ -526,7 +526,7 @@ ko:
         enable : '사용여부'
       push_message :
         title : '제목'
-        content : 'MMS 메세지'
+        content : '메세지'
       push_prepare_picture :
         photo : '이미지'
         enable : '사용여부'

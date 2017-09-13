@@ -42,22 +42,23 @@ class Admin::PushMessagesController < Admin::AdminController
   # POST /notices
   # POST /notices.json
   def create
-    n = Rapns::Gcm::Notification.new
-    n.app = Rapns::Gcm::App.find_by_name("android_app")
-    aa=Device.select('registration_id').where(:id=>params[:user_id])
-    n.registration_ids = aa.map { |x| x[:registration_id] }
-    if params[:push_message][:type]=='notice'
-      n.data = {:type => 'notice', :data => params[:push_message][:data] }
-    elsif
-      n.data = {:type => 'insert_photo', :data => params[:push_message][:data] }
+    n = Rpush::Gcm::Notification.new
+    n.app = Rpush::Gcm::App.find_by_name("android_app")
+
+    if(params[:send_type]=='all')
+      aa=Device.select('registration_id').all
     else
-      n.data = {:type => 'update_photo', :data => params[:push_message][:data] }
+      aa=Device.select('registration_id').where(:id=>params[:user_id])
     end
+
+    n.registration_ids = aa.map { |x| x[:registration_id] }
+
+    n.data = {:message => params[:title] }
+    n.notification = { body: params[:content],title: params[:title]}
 
     respond_to do |format|
       if n.save!
-        Rapns.push
-        format.html { redirect_to @push_message, :notice => @controller_name +t(:message_success_insert)}
+        format.html { redirect_to admin_push_messages_path, :notice => @controller_name +t(:message_success_insert)}
         format.json { render :json => @push_message, :status => :created, :location => @push_message }
       else
         format.html { render :action => "new" }
