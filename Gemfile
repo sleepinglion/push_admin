@@ -48,6 +48,7 @@ gem 'meta-tags'
 gem 'gretel'
 gem 'i18n-js'
 gem 'non-stupid-digest-assets'
+gem 'fcm'
 gem 'globalize', git: 'https://github.com/globalize/globalize'
 
 group :development, :test do
