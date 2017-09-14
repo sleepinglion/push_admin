@@ -42,23 +42,21 @@ class Admin::PushMessagesController < Admin::AdminController
   # POST /notices
   # POST /notices.json
   def create
-    =begin
-    n = Rpush::Gcm::Notification.new
-    n.app = Rpush::Gcm::App.find_by_name("android_app")
+    #begin
+    #n = Rpush::Gcm::Notification.new
+    #n.app = Rpush::Gcm::App.find_by_name("android_app")
 
-    if(params[:send_type]=='all')
-      aa=Device.select('registration_id').all
-    else
-      aa=Device.select('registration_id').where(:id=>params[:user_id])
-    end
+    #if(params[:send_type]=='all')
+    #  aa=Device.select('registration_id').all
+    #else
+    #  aa=Device.select('registration_id').where(:id=>params[:user_id])
+    #end
 
-    n.registration_ids = aa.map { |x| x[:registration_id] }
+    #n.registration_ids = aa.map { |x| x[:registration_id] }
 
-    n.data = {:message => params[:title] }
-    n.notification = { body: params[:content],title: params[:title]}
-    =end
-
-    require 'fcm'
+    #n.data = {:message => params[:title] }
+    #n.notification = { body: params[:content],title: params[:title]}
+    #end
 
     fcm = FCM.new("AAAAMWgqcXM:APA91bFFjJN5CvxPeKMW_sbxh8h3wZ0PDoJYHZzooaZUcbdfB4cuht3FqFevKVF7dojtcCApm77nFN-Mi59BnbRK7yUo3jqxYoW_ofDw55cOCk9zBym5BCAc7M6LvxMChYDGddNfs7fl")
     # you can set option parameters in here
@@ -72,7 +70,7 @@ class Admin::PushMessagesController < Admin::AdminController
     end
 
     registration_ids = aa.map { |x| x[:registration_id] }
-    options = {data: {title: params['title']}, collapse_key: "updated_score"}
+    options = {notification: {title: params[:title], body: params[:content] }}
 
     respond_to do |format|
       if fcm.send(registration_ids, options)
