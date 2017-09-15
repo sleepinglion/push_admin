@@ -35,7 +35,7 @@ footer {clear:both;float:left;width:80%;margin:0 10%;color:#666;text-align: cent
 footer div {margin:0.3em 0 0}
 #mom {clear:both;float:left;width:100%;padding:0}
 .page-header {float:left;width:100%}
-.page-header h2 {float:left;margin-bottom:0;font-weight:bold;color:#666}
+.page-header h2 {float:left;margin-bottom:0;font-weight:bold;color:#666;text-transform: capitalize}
 .page-header .breadcrumb  {float:right;margin:0;text-transform: capitalize;}
 .alert-success {clear:both}
 #sl_ad {clear:both;margin-bottom:10px}
@@ -57,8 +57,6 @@ footer div {margin:0.3em 0 0}
 .wrapper {margin:0 auto;width:728px}
 .ad_test {background:red}
 .jumbotron {margin:30px 0}
-.sl_categories span.hidden-xs {display:inline!important}
-.c_pointer {cursor:pointer}
 
 /* header */
 header {position:relative}
@@ -68,13 +66,12 @@ header nav { position: relative; z-index: 999; margin:0; padding:0}
 header nav ul { float: right; margin: 1.5em 0 0 0; padding: 0}
 header nav li { float: left; list-style: none; margin: 0 0 0 20px}
 header nav ul.nav-pills > li + li {margin-left:20px}
-header nav a { float: left; color: #333; font-size:1.3em; text-decoration: none}
+header nav a { float: left; color: #333; font-size:1.3em; text-decoration: none;text-transform: capitalize;}
 header nav a:hover {color:#000}
 header nav a:visited {color:#666}
 header nav a:active {color:red}
 header nav ul li ul {position:absolute;display:none}
-header #top_menu {position:absolute;right:10px;top:5px;margin:0;padding:0;list-style:none;z-index:9}
-header #top_menu li {float:left;margin:0 15px 0 0;padding:0}
+
 
 
 #select_language_layer {position:absolute;z-index:9;top:10px;right:30px}
@@ -85,55 +82,11 @@ header #top_menu li {float:left;margin:0 15px 0 0;padding:0}
 
 .jumbotron h2 {font-size:3em}
 
-/* */
-#sl_blog_categories ul li.active a {font-weight:bold}
-
-#sl_program_index article {background:#e7e7e7;border-radius:10px;margin:20px 0;padding:20px}
 
 /* footer */
 footer {position:relative}
 footer address {margin-top:10px }
 footer form {position:absolute;top:10px;right:10px}
-
-/* intro */
-#sl_intro_index h3 {margin-top:0;margin-bottom:40px;text-indent:0}
-#sl_intro_index #intro_main_content {float:left;width:100%;margin:0 0 20px}
-#sl_intro_index #sl_intro_right {float:right;position:relative}
-#sl_intro_index #sl_intro_right dl {float:left;width:100%;margin:0 0 10px;padding:0}
-#sl_intro_index #sl_intro_right dt {clear:both;float:left;margin:5px 0;width:100px;}
-#sl_intro_index #sl_intro_right dd {float:left;margin:5px 0}
-#sl_intro_index article {margin-bottom:2em;line-height:150%}
-#sl_intro_index article h2 {margin:0 0 1em;padding:0.5em 0;border-bottom:1px dotted #ccc}
-#sl_intro_index #main_content a {clear:both;display:block}
-
-/* gallery */
-.sl_gallery {float:left;width:100%;margin:10px 0}
-#gallery_main_content {float:left;width:100%;margin:0 0 20px}
-#sl_gallery_left {float:left;position:relative;overflow:hidden}
-#sl_gallery_left figure {position:relative;}
-#sl_gallery_left figure figcaption {position:absolute;display:block;bottom:0px;padding:5px 0;margin:0;text-align:center;color:#fff;width:100%;max-width:400px;background:#333;opacity:0.8}
-#sl_gallery_right h4 {margin:0 0 10px;padding:0}
-#sl_gallery_right div.text {margin:0 0 20px;line-height:170%}
-#sl_gallery_right div.text p {margin:0;padding:0}
-#sl_gallery_right div.add_info {color:#999}
-/* gallery slide */
-#sl_main_gallery {float:left;width:100%;margin-top:30px;margin-bottom:30px}
-#sl_main_gallery .carousel-inner a {display:block}
-#sl_main_gallery .carousel-inner a.nm  {margin-right:0}
-#sl_main_gallery .carousel-control {width:20px;color:#999}
-#sl_main_gallery .carousel-control.left {display:block;background:none;left:-30px;z-index:9}
-#sl_main_gallery .carousel-control.right {display:block;background:none;right:-30px;z-index:9}
-#sl_main_gallery .carousel-indicators {bottom:-40px}
-#sl_main_gallery .carousel-indicators li {border-color:#ccc}
-#sl_main_gallery .carousel-indicators .active {background:#ccc}
-#sl_main_gallery.sl_main_list .carousel-control.left,#sl_main_gallery.sl_main_list .carousel-control.right {margin-top:40px}
-
-/* blog */
-#sl_blog_index {float:left;width:100%;margin:10px 0}
-#sl_blog_index ol.nav-tabs {margin:0 0 10px}
-#sl_blog {float:left;width:100%;margin:20px 0}
-#sl_blog_index .media {border-bottom:1px dotted #ccc;padding-bottom:10px;margin-bottom:20px}
-#sl_blog_index .media .tags {display:none}
 
 /* Main Common*/
 #main_main section {margin:0 0 3em;padding:0}

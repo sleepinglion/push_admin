@@ -21,7 +21,7 @@ crumb :user_edit do |user|
 end
 
 crumb :user_login do
-   link t(:user_login), new_user_session_path
+   link t(:login), new_user_session_path
 end
 
 crumb :new_user_password do

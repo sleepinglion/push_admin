@@ -1,14 +1,15 @@
 ko:
-  service_name : '인용 푸쉬'
+  service_name : '인용 푸쉬 사이트'
   meta_description : '병원을 통하지 않고 소비자가 직접 유전자 검사를 하여 자신의 상태를 알고서 이에 따라 관리가 가능합니다.'
   meta_description_intro : '제노솔루션은 최고의 유전자검사기관입니다.'
   meta_description_supports : '제노솔루션의 고객지원을 위한 페이지입니다.'
   meta_description_orders : '제노솔루션 유전자검사 신청하기 페이지입니다.'
   meta_keywords : 'DTC,유전자,유전자검사,유전자분석,유전자관리,유전자검사기관,유전자분석서비스,클리노믹스,clinomics'
   meta_image : 'http://www.sleepinglion.pe.kr/sl.jpg'
-  meta_url : 'http://inyong.sleepinglion.pe.kr'
+  meta_url : 'http://push.sleepinglion.pe.kr'
   title_separator : '-'
   default_title : '푸시관리자'
+  site_address : '아프리카 사자굴'
 
   korean : '한국어'
   chineses : '중국어'
@@ -24,7 +25,7 @@ ko:
   cancel : '취소'
   home : '홈'
   home_title : '인용푸쉬'
-  home_main_title : '인용이가 푸쉬~ 호프쑤왕'
+  home_main_title : '인용 푸쉬~ 호프쑤왕!'
   home_main_description : '인용이가 푸쉬하는 사이트입니다.'
   home_more_description : '깨끗한 웹세상을 꿈꿉니다.'
   back_to_home : '메인으로 돌아가기'
@@ -38,12 +39,8 @@ ko:
   foreigner : '외국인'
   success : '성공'
   fail : '실패'
-  agree_agreement : '약관 동의하기'
-  order_form_submit : '주문하기'
-  related_gene_description : '관여 유전자 상세설명'
   user_error : '가지 문제로'
   sorry_but_error : '더이상 진행할 수 없습니다.'
-  gene : '유전자'
   italic : '기울림'
   none : '없음'
   click : 'click'
@@ -57,8 +54,24 @@ ko:
   delete : '삭제'
   first_check_your_email_availability : '먼저 이메일 사용가능 여부를 확인하세요'
   maker : '잠자는사자'
-  user_login : '로그인'
   remember_me : '기억하기'
+  user_id: '사용자 ID'
+  id: 'ID'
+  login : '로그인'
+  logout : '로그아웃'
+  flag_true : '사용'
+  flag_false : '중지'
+
+  login_page : '로그인 페이지'
+  login_title : '관리자 로그인'
+  login_p_id : '아이디를 입력하세요'
+  login_p_email : '이메일을 입력하세요'
+  login_p_password : '비밀번호를 입력하세요'
+
+  new_user : '회원가입'
+  delete_user : '회원탈퇴'
+  user_data_default_insert : '기본정보 입력'
+  user_data_optional_insert : '기타정보 입력'
 
   send_now : '바로 전송'
   send_schedule : '예약 전송'
@@ -84,27 +97,6 @@ ko:
   no_send : '전송안함'
   find_by_email : '이메일로 찾기'
   find_by_name : '이름으로 찾기'
-
-  user_id: '사용자 ID'
-  count_default : '개'
-  count_thing : '건'
-  count_peple : '명'
-  count_address : '건'
-  subject: '제목'
-  summary: '요약'
-  for: '을(를)'
-  id: 'ID'
-  login : '로그인'
-  logout : '로그아웃'
-  flag_true : '사용'
-  flag_false : '중지'
-
-  login_page : '로그인 페이지'
-  login_title : '관리자 로그인'
-  login_p_id : '아이디를 입력하세요'
-  login_p_email : '이메일을 입력하세요'
-  login_p_password : '비밀번호를 입력하세요'
-  login_remember : '기억해줘'
 
   period_today : '오늘'
   period_week : '일주일'
@@ -134,6 +126,10 @@ ko:
   menu_user : '회원관리'
   menu_push : '푸쉬관리'
   menu_new_user : '회원가입'
+  menu_my_page : '마이 페이지'
+  menu_new_user_password : '비밀번호 찾기'
+  menu_new_user : '회원 가입하기'
+  menu_edit_user : '내정보 수정'
 
   action_index : '목록'
   action_show : '상세'
@@ -172,17 +168,6 @@ ko:
 
   no_data : '해당 데이터가 없습니다.'
   not_insert : '미입력'
-  no_exists_member : '아직 결과지가 완성되지 않았거나 해당 회원의 정보가 없습니다.'
-  no_exists_privilege : '권한없음'
-  no_exists_position : "%{index}행에 %{position}(이)가 없습니다"
-  no_exists_genotype : "%{genotype}는 해당위치(%{position})에 존재하지 않는 genotype입니다."
-  no_exists_barcode : '바코드 정보가 일치하지 않습니다. 다시 한번 확인 후 입력해 주시길 바랍니다.<br />바코드 정보가 지속적으로 입력되지 않으면 고객상담에 문의해주시길 바랍니다.'
-  not_allow_insert_same_user_id_and_related_action_id : '같은 사용자-관련작용(이미 존재함)은 입력할 수 없습니다.'
-
-  report_complete_title : 'GenoSolution 리포트 완성 알림 메세지'
-
-  result_detail : '상세결과'
-  result_total_description : '결과값 종합설명'
 
   ckeditor:
     page_title: "CKEditor Files Manager"
