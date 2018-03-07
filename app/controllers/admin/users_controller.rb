@@ -17,8 +17,6 @@ class Admin::UsersController < Admin::AdminController
     case params[:find_method]
       when 'email'
         condition_sql='login_id like ?'
-      when 'barcode'
-        condition_sql='barcode like ?'
       when 'name'
         condition_sql='name like ?'
       else
@@ -114,11 +112,6 @@ class Admin::UsersController < Admin::AdminController
     if params[:name].present?
       condition_sql+="AND name like ? "
       sql_params << '%'+params[:name].strip+'%'
-    end
-
-    if params[:barcode].present?
-      condition_sql+="AND barcode like ? "
-      sql_params << '%'+params[:barcode].strip+'%'
     end
 
     if params[:enable].present?

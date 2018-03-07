@@ -58,7 +58,7 @@ class Admin::PushMessagesController < Admin::AdminController
     #n.notification = { body: params[:content],title: params[:title]}
     #end
 
-    fcm = FCM.new("AAAAMWgqcXM:APA91bFFjJN5CvxPeKMW_sbxh8h3wZ0PDoJYHZzooaZUcbdfB4cuht3FqFevKVF7dojtcCApm77nFN-Mi59BnbRK7yUo3jqxYoW_ofDw55cOCk9zBym5BCAc7M6LvxMChYDGddNfs7fl")
+    fcm = FCM.new("AAAAT69UMwU:APA91bEznChzjuGQBUv6jgJQFAzXYLkcHg_6ANUrRkBnzF7OMYE5jvjdYFgdQdmmffVNE2_elFlhC_tt75fl74GJnPVcRMh7AGUgZIvSvpxhV2bXPvHj-wT0GuwZwojdy694VMNC-FZe")
     # you can set option parameters in here
     #  - all options are pass to HTTParty method arguments
     #  - ref: https://github.com/jnunemaker/httparty/blob/master/lib/httparty.rb#L29-L60

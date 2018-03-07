@@ -1,6 +1,7 @@
 class DevicesController < ApplicationController
   before_action :set_device, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :verify_authenticity_token
+  
   def before_init
     super
 

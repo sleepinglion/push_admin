@@ -4,49 +4,21 @@
 		<div class="col-xs-12 col-md-offset-4 col-md-9 col-md-pull-1 col-xl-offset-0 col-xl-pull-0 col-xl-12">
 			<h2 class="col-xs-12"><%=t(:user_add_complete) %></h2>
 			<article class="col-xs-12">
-				<div class="character-intro">
-					<div class="woman col-xs-12 col-sm-6">
-						<p><%=t(:welcome_new_user) %></p>
-						<ul class="character-img">
-						<li class="character_female_1_3"><%=t(:related_action1) %></li>
-						<li class="character_female_2_3"><%=t(:related_action2) %></li>
-						<li class="character_female_3_3"><%=t(:related_action3) %></li>
-						<li class="character_female_4_3"><%=t(:related_action4) %></li>
-						<li class="character_female_5_3"><%=t(:related_action5) %></li>
-						<li class="character_female_6_3"><%=t(:related_action6) %></li>
-						<li class="character_female_7_3"><%=t(:related_action7) %></li>
-						<li class="character_female_8_3"><%=t(:related_action8) %></li>
-						<li class="character_female_9_3"><%=t(:related_action9) %></li>
-						<li class="character_female_10_3"><%=t(:related_action10) %></li>
-						<li class="character_female_11_3"><%=t(:related_action11) %></li>
-						<li class="character_female_12_3"><%=t(:related_action12) %></li>
-						</ul>
-					</div>
-					<div class="man col-xs-12 col-sm-6">
-						<p><%=raw t(:thankyou_new_user) %></p>
-						<ul class="character-img">
-						<li class="character_male_1_3"><%=t(:related_action1) %></li>
-						<li class="character_male_2_3"><%=t(:related_action2) %></li>
-						<li class="character_male_3_3"><%=t(:related_action3) %></li>
-						<li class="character_male_4_3"><%=t(:related_action4) %></li>
-						<li class="character_male_5_3"><%=t(:related_action5) %></li>
-						<li class="character_male_6_3"><%=t(:related_action6) %></li>
-						<li class="character_male_7_3"><%=t(:related_action7) %></li>
-						<li class="character_male_8_3"><%=t(:related_action8) %></li>
-						<li class="character_male_9_3"><%=t(:related_action9) %></li>
-						<li class="character_male_10_3"><%=t(:related_action10) %></li>
-						<li class="character_male_11_3"><%=t(:related_action11) %></li>
-						<li class="character_male_12_3"><%=t(:related_action12) %></li>
-						</ul>
-					</div>
-				</div>
-				<p class="col-xs-12 description"><%=raw t(:user_add_complete_description) %></p>
-				<div class="section_bottom">
-					<%=link_to root_path,{:class=>"btn col-xs-12 btn-block btn-primary btn-lg"} do %>
-						<span>&nbsp;</span><%=t(:back_to_home) %>
-					<% end %>
-				</div>
+
 			</article>
 		</div>
 	</div>
 </section>
+<script>
+
+function waitForBridge() {
+  if (window.postMessage.length !== 1) {
+    setTimeout(waitForBridge, 200);
+  } else {
+     window.postMessage('{"action": "test"}', '*');
+  }
+}
+
+window.onload = waitForBridge;
+
+</script>

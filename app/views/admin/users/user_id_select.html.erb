@@ -4,7 +4,6 @@
 			<%= form_tag user_id_select_search_result_admin_users_path,:method=>'get',:id=>'user_id_search_form',:class=>"form-inline" do |f| %>
 				<div class="form-group">
 					<select name="find_method" class="form-control">
-						<option value="barcode" <% if params[:barcode].present? %>selected="selected"<% end %>><%= t(:find_by_barcode) %></option>						
 						<option value="login_id" <% if params[:login_id].present? %>selected="selected"<% end %>><%= t(:find_by_email) %></option>
 						<option value="name" <% if params[:name].present? %>selected="selected"<% end %>><%= t(:find_by_name) %></option>
 					</select>
