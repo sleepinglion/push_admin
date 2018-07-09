@@ -72,12 +72,9 @@ class Admin::PushMessagesController < Admin::AdminController
       aa=Device.select('registration_id').where(:id=>params[:user_id])
     end
 
-    require "base64"    
-    i_image=image_url('s_rib.jpg')
-    puts 'asdgfsdgasdgasdg'
-    puts i_image
+    require "base64"
     registration_ids = aa.map { |x| Base64.decode64(x[:registration_id]) }
-    options = {notification: {title: params[:title], body: params[:content], icon: i_image}}
+    options = {notification: {title: params[:title], body: params[:content]}}
 
     respond_to do |format|
       if fcm.send(registration_ids, options)

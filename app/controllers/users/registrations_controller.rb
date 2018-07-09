@@ -34,13 +34,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     build_resource(resource_params)
 
-    if Rails.env.production?
-      result=verify_recaptcha(:model => resource) && resource.save
-    else
-      result=resource.save
-    end
+    #if Rails.env.production?
+    #  result=verify_recaptcha(:model => resource) && resource.save
+    #else
+    #  result=resource.save
+    #end
 
-    if result
+    if resource.save
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_navigational_format?
         sign_in(resource_name, resource)

@@ -38,32 +38,7 @@
 	<%= text_area :content,nil,{:class=>'form-control', :required=>"required", :rows=>10, :id=>'message_text'} %>
 	<span id="byteInfo">0</span> <span>Byte</span> / 최대 <span id="max_byte">3500</span> Byte
 </div>
-<% if can? :read, PushPreparePicture %>
-<div class="form-group">
-	<%= label_tag t(:send_multimedia) %>
-	<div id="multimedia_type">
-		<label class="radio-inline"><%= radio_button_tag 'send_multimedia',0,true %><%=t(:not_send) %></label>
-		<!-- <label class="radio-inline"><%= radio_button_tag 'send_type','exclude' %><%=t(:exclude_send) %></label> -->
-		<label class="radio-inline"><%= radio_button_tag 'send_multimedia',1 %><%=t(:send) %></label>
-	</div>
-</div>
-<fieldset>
-	<legend>SMS</legend>
-<div id="multimedia_insert" class="form-group">
-	<%=label_tag :users,t(:send_multimedia)%>
-	<ul style="list-style:none">
-	<li class="users">
-	<label>
-		<%=t(:image) %>
-		<%= file_field_tag 'picture_files[]',{:id=>'push_log_multimedia1',:accept=>"image/jpeg"} %>
-	</label>&nbsp;&nbsp;
-	<button type="button" class="delete_li btn btn-danger" style="display:none"><%=t(:delete) %></button>
-	</li>
-	</ul>
-	<button type="button" id="add_multimedia" class="btn btn-primary">이미지입력 추가</button>&nbsp;<%=link_to t(:select_insert),id_select_admin_push_prepare_pictures_path,:class=>'btn btn-primary modal_link',:'data-toggle'=>"modal",:'data-target'=>"#myModal" %>
-</div>
-</fieldset>
-<% end %>
+
 
 
 <div class="form-group actions">
