@@ -52,11 +52,11 @@
 		<i class="glyphicon glyphicon-comment glyphicon-white"></i>
 		<%=t(:push_message,scope:[:activerecord,:models])%><% end %></li>
 	<% end %>
-	<% if can? :read, PushPreparePicture %>
+	<!-- <% if can? :read, PushPreparePicture %>
 	<li<% if params[:controller]=='admin/push_prepare_pictures' %> class="active"<% end %>><%=link_to admin_push_prepare_pictures_path do %>
 		<i class="glyphicon glyphicon-comment glyphicon-white"></i>
 		<%=t(:push_prepare_picture,scope:[:activerecord,:models])%><% end %></li>
-	<% end %>
+	<% end %> -->
 	<% if can? :read, PushPrepareMessage %>
 	<li<% if params[:controller]=='admin/push_prepare_messages' %> class="active"<% end %>><%=link_to admin_push_prepare_messages_path do %>
 		<i class="glyphicon glyphicon-comment glyphicon-white"></i>
