@@ -50,10 +50,18 @@ class DevicesController < ApplicationController
   # POST /devices
   # POST /devices.json
   def create
-    @device = Device.new(device_params)
+    @device_count = Device.where(:user_id=>current_user).count
+
+    if @device_count.zero?
+      @device = Device.new(device_params)
+      result=@device.save
+    else
+      @device=Device.where(:user_id=>current_user)  
+      result=@device.update_attributes(device_params)
+    end
 
     respond_to do |format|
-      if @device.save
+      if result
         format.html { redirect_to @device, notice: 'Device was successfully created.' }
         format.json { render json: @device, status: :created, location: @device }
       else
@@ -91,6 +99,7 @@ class DevicesController < ApplicationController
     end
   end
 
+  private
   # Use callbacks to share common setup or constraints between actions.
   def set_device
     @device = Device.find(params[:id])
@@ -98,6 +107,6 @@ class DevicesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def device_params
-    params.require(:device).permit(:user_id,:device_id,:registration_id,:enable)
+    params.require(:device).permit(:os,:registration_id,:enable).merge(user_id: current_user.id)
   end
 end

@@ -12,11 +12,18 @@
 <script>
 
 function waitForBridge() {
-  if (window.postMessage.length !== 1) {
-    setTimeout(waitForBridge, 200);
-  } else {
-     window.postMessage('{"action": "test"}', '*');
-  }
+	if (typeof WebViewBridge !== 'undefined') {
+			var d_data=data;
+			WebViewBridge.onMessage = function (message) {
+				if (message === "change url") {
+						change_url(d_data);
+				}
+			};
+
+			WebViewBridge.send(data);
+	} else {
+		change_url(data);
+	}
 }
 
 window.onload = waitForBridge;

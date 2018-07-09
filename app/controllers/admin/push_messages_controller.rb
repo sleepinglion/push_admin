@@ -38,6 +38,9 @@ class Admin::PushMessagesController < Admin::AdminController
     end
   end
 
+  def image_url(source)
+    URI.join(root_url, ActionController::Base.helpers.asset_url(source,type: :image))
+  end
 
   # POST /notices
   # POST /notices.json
@@ -58,7 +61,7 @@ class Admin::PushMessagesController < Admin::AdminController
     #n.notification = { body: params[:content],title: params[:title]}
     #end
 
-    fcm = FCM.new("AAAAT69UMwU:APA91bEznChzjuGQBUv6jgJQFAzXYLkcHg_6ANUrRkBnzF7OMYE5jvjdYFgdQdmmffVNE2_elFlhC_tt75fl74GJnPVcRMh7AGUgZIvSvpxhV2bXPvHj-wT0GuwZwojdy694VMNC-FZe")
+    fcm = FCM.new("AAAAhL0fT7o:APA91bFBg4HhU7W_p-_MtWa45MLGKAZJtqHAvmw20OSXDl7IPbeX_kVqVl1n4efeNPVwrIoA8uRlecUAgJW6V0cbSIzYMV59cwC0c9kC4ZrOs2TK6ZXNwK_cqyIEmZiXAe7nU7tBW5HP")
     # you can set option parameters in here
     #  - all options are pass to HTTParty method arguments
     #  - ref: https://github.com/jnunemaker/httparty/blob/master/lib/httparty.rb#L29-L60
@@ -69,8 +72,12 @@ class Admin::PushMessagesController < Admin::AdminController
       aa=Device.select('registration_id').where(:id=>params[:user_id])
     end
 
-    registration_ids = aa.map { |x| x[:registration_id] }
-    options = {notification: {title: params[:title], body: params[:content] }}
+    require "base64"    
+    i_image=image_url('s_rib.jpg')
+    puts 'asdgfsdgasdgasdg'
+    puts i_image
+    registration_ids = aa.map { |x| Base64.decode64(x[:registration_id]) }
+    options = {notification: {title: params[:title], body: params[:content], icon: i_image}}
 
     respond_to do |format|
       if fcm.send(registration_ids, options)

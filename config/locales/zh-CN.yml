@@ -25,7 +25,7 @@ zh-CN:
   cancel : '取消'
   home : '主页'
   home_title : '仁勇推'
-  home_main_title : '仁勇推~ 买一杯啤酒!'
+  home_main_title : '仁勇推~<br class="visible-xs" />买一杯啤酒!'
   home_main_description : '这网站是仁勇推'
   home_more_description : '깨끗한 웹세상을 꿈꿉니다.'
   back_to_home : '返回主页'

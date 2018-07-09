@@ -49,9 +49,9 @@ ActiveRecord::Schema.define(version: 20170902082745) do
 
   create_table "devices", force: :cascade do |t|
     t.integer  "user_id",                                    null: false
-    t.string   "device_id",       limit: 100,                null: false
+    t.string   "os",              limit: 50,                 null: false
     t.string   "registration_id", limit: 200,                null: false
-    t.boolean  "flag",                        default: true, null: false
+    t.boolean  "enable",                      default: true, null: false
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
   end

@@ -57,6 +57,16 @@
 <%= render :partial => 'layouts/footer' %>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true"></div>
 <%= javascript_include_tag 'application', "data-turbolinks-track" => true %>
+<% if user_signed_in? %>
+<script>
+function waitForBridge() {
+	if (typeof WebViewBridge !== 'undefined') {    
+    WebViewBridge.send('{"action":"login","user_id":<%=current_user.id %>}');
+  }
+}
 
+window.onload = waitForBridge;
+</script>
+<% end %>
 </body>
 </html>
