@@ -73,8 +73,9 @@ class Admin::PushMessagesController < Admin::AdminController
     end
 
     require "base64"
+
     registration_ids = aa.map { |x| Base64.decode64(x[:registration_id]) }
-    options = {notification: {title: params[:title], body: params[:content]}}
+    options = {notification: {title: params[:title], body: params[:content]}}        
 
     respond_to do |format|
       if fcm.send(registration_ids, options)
