@@ -56,7 +56,7 @@ class DevicesController < ApplicationController
       @device = Device.new(device_params)
       result=@device.save
     else
-      @device=Device.where(:user_id=>current_user)  
+      @device=Device.where(:user_id=>current_user).last
       result=@device.update_attributes(device_params)
     end
 
