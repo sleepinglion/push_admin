@@ -31,24 +31,24 @@ $(document).ready(function(){
 				$.each(data.list,function(index,value){
 					var li_exists=false;
 					$('#dest_insert li').each(function(){
-						if($(this).find('input:first').val()==value.name+'/'+value.id && $(this).find('input:last').val()==value.phone) {
+						if($(this).find('input:first').val()==value.name+'/'+value.id) {
 							li_exists=true;
 						}
 					});
 
 					if(li_exists) {
-						var li=$('<li class="inserted"><input type="hidden" value="'+value.name+'" /><input type="hidden" value="'+value.id+'" /><input type="hidden" value="'+value.phone+'" /><span>'+value.id+':'+value.name+'/'+value.barcode+'</span><span class="user_phone">전화번호:'+value.phone+'</span></li>');
+						var li=$('<li class="inserted"><input type="hidden" value="'+value.name+'" /><input type="hidden" value="'+value.id+'" /><span>'+value.id+':'+value.name+'</span><span class="user_phone">전화번호:'+value.phone+'</span></li>');
 					} else {
-						var li=$('<li><input type="hidden" value="'+value.name+'" /><input type="hidden" value="'+value.id+'" /><input type="hidden" value="'+value.phone+'" /><span>'+value.id+':'+value.name+'/'+value.barcode+'</span><span class="user_phone">전화번호:'+value.phone+'</span></li>');
+						var li=$('<li><input type="hidden" value="'+value.name+'" /><input type="hidden" value="'+value.id+'" /><span>'+value.id+':'+value.name+'</span><span class="user_phone">전화번호:'+value.phone+'</span></li>');
 					}
 
 					li.click(function(){
 						var name=$(this).find('input:first').val()+'/'+$(this).find('input:eq(1)').val();
-						var phone=$(this).find('input:last').val();
+						var user_id=$(this).find('input:last').val();
 						var exists=false;
 						var space=false;
 						$('#dest_insert li').each(function(){
-							if($(this).find('input:first').val()==name && $(this).find('input:last').val()==phone) {
+							if($(this).find('input:first').val()==name && $(this).find('input:last').val()==user_id) {
 								exists=true;
 							}
 
@@ -63,7 +63,7 @@ $(document).ready(function(){
 						sms_clone_count++;
 						var clone_li=$('#dest_insert li:last').clone(true);
 						clone_li.find('input:first').val(name).attr('id','sms_desc_name'+sms_clone_count).attr('readonly','readonly');
-						clone_li.find('input:last').val(phone).attr('id','sms_desc_phone'+sms_clone_count).attr('readonly','readonly');
+						clone_li.find('input:last').val(user_id).attr('id','sms_desc_phone'+sms_clone_count).attr('readonly','readonly');
 						clone_li.find('.delete_li').click(delete_li).show();
 						clone_li.appendTo($("#dest_insert ul"));
 

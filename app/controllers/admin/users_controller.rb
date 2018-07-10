@@ -14,6 +14,10 @@ class Admin::UsersController < Admin::AdminController
   def user_id_select_search_result
 
     like=true
+
+    if params[:search].blank?
+      like=false
+    else
     case params[:find_method]
       when 'email'
         condition_sql='login_id like ?'
@@ -22,17 +26,18 @@ class Admin::UsersController < Admin::AdminController
       else
         like=false
     end
+    end 
 
     unless params[:per_page].present?
       params[:per_page]=20
     end
 
     if like
-      @user_count = User.where(:enable=>true).where.not(:phone=>nil).where(condition_sql,'%'+params[:search].strip+'%').count
-      @users = User.order('id desc').where(:enable=>true).where.not(:phone=>nil).where(condition_sql,'%'+params[:search].strip+'%').page(params[:page]).per(params[:per_page])
+      @user_count = User.where(:enable=>true).where(condition_sql,'%'+params[:search].strip+'%').count
+      @users = User.order('id desc').where(:enable=>true).where(condition_sql,'%'+params[:search].strip+'%').page(params[:page]).per(params[:per_page])
     else
-      @user_count = User.where(:enable=>true).where.not(:phone=>nil).count
-      @users = User.order('id desc').where(:enable=>true).where.not(:phone=>nil).page(params[:page]).per(params[:per_page])
+      @user_count = User.where(:enable=>true).count
+      @users = User.order('id desc').where(:enable=>true).page(params[:page]).per(params[:per_page])
     end
 
     if(@user_count.zero?)
