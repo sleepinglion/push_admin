@@ -154,16 +154,16 @@ ActiveRecord::Schema.define(version: 20170902082745) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",                   limit: 40,                  null: false
+    t.string   "name",                   limit: 40,                 null: false
     t.date     "birthday"
     t.string   "phone",                  limit: 40
     t.boolean  "sex"
     t.boolean  "boolean"
-    t.boolean  "enable",                             default: false, null: false
+    t.boolean  "enable",                             default: true, null: false
     t.string   "photo",                  limit: 100
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "group_id",                           default: 1,     null: false
+    t.integer  "group_id",                           default: 1,    null: false
     t.string   "login_id",               limit: 100
     t.string   "encrypted_password",     limit: 60
     t.string   "reset_password_token",   limit: 150
@@ -173,7 +173,7 @@ ActiveRecord::Schema.define(version: 20170902082745) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip",     limit: 100
     t.string   "last_sign_in_ip",        limit: 100
-    t.integer  "device_count",                       default: 1,     null: false
+    t.integer  "device_count",                       default: 1,    null: false
     t.index ["login_id"], name: "index_users_on_login_id", unique: true
   end
 

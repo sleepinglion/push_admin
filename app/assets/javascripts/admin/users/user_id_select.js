@@ -62,8 +62,8 @@ $(document).ready(function(){
 
 						sms_clone_count++;
 						var clone_li=$('#dest_insert li:last').clone(true);
-						clone_li.find('input:first').val(name).attr('id','sms_desc_name'+sms_clone_count).attr('readonly','readonly');
-						clone_li.find('input:last').val(user_id).attr('id','sms_desc_phone'+sms_clone_count).attr('readonly','readonly');
+						clone_li.find('span:first').text(name).attr('id','sms_desc_name'+sms_clone_count).attr('readonly','readonly');
+						clone_li.find('input:first').val(user_id).attr('id','sms_desc_user_id'+sms_clone_count);
 						clone_li.find('.delete_li').click(delete_li).show();
 						clone_li.appendTo($("#dest_insert ul"));
 
