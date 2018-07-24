@@ -1,0 +1,15 @@
+<% breadcrumb :recommends %>
+<div id="sl_recommend_index">
+
+	<% unless @recommends.empty? %>
+	<% @recommends.each do |recommend| %>
+	<article>
+
+	</article>	
+	<% end %>	
+	<% else %>
+	<article>
+		<%=t(:no_data) %>
+	</article>
+	<% end %>
+</div>

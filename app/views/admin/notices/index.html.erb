@@ -1,0 +1,64 @@
+<div class="row">
+	<h3 class="col-xs-12 col-sm-6"><%= @controller_name %> <%= actionNameChange controller.action_name %></h3>
+
+</div>
+<div class="table-responsive">
+	<table class="table table-bordered table-striped">
+		<colgroup>
+			<col style="width:80px;" />
+			<col />
+			<col style="width:80px;" />
+			<col style="width:100px;" />
+			<% if can?(:update, Notice) || can?(:delete, Notice) %>
+			<col <%= raw manage_width(Notice) %> />
+			<% end %>
+		</colgroup>
+		<thead>
+			<tr>
+				<th><%= t(:label_number) %></th>
+				<th><%= t(:label_title) %></th>
+				<th><%= t(:label_flag) %></th>
+				<th><%= t(:label_created_at) %></th>
+				<% if can?(:update, Notice) || can?(:delete, Notice) %>
+				<th><%= t(:label_manage) %></th>
+				<% end %>
+			</tr>
+		</thead>
+		<tbody>
+			<% unless @notices.empty? %>
+			<% @notices.each do |notice| %>
+			<tr>
+				<td><%= link_to notice.id,admin_notice_path(notice) %></td>
+				<td class="mw"><%= link_to notice.title,admin_notice_path(notice) %></td>
+				<td><%= raw flagToString(notice.enable) %></td>
+				<td><%= notice.created_at.to_date %></td>
+				<% if can?(:update, Notice) || can?(:delete, Notice) %>
+				<td> <% if can? :update, notice %>
+				<%= link_to edit_admin_notice_path(notice),:class=>"btn btn-default" do %> <i class="glyphicon glyphicon-pencil"></i> <%= t(:link_edit) %>
+				<% end %>
+				<% end %>
+				<% if can? :delete, notice %>
+				<%= link_to admin_notice_path(notice), :method => :delete, :data => { :confirm => t(:delete_confirm) },:class=>"btn btn-danger" do %> <i class="glyphicon glyphicon-trash"></i> <%= t(:link_delete) %>
+				<% end %>
+				<% end %> </td>
+				<% end %>
+			</tr>
+			<% end %>
+			<% else %>
+			<tr>
+				<td colspan="5"><%= t(:no_data)%></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+<div class="row">
+	<div class="col-xs-6 col-sm-3 col-md2">
+		<% if can? :create, Notice %>
+		<%= link_to new_admin_notice_path,:class=>"btn btn-primary" do %>
+		<i class="glyphicon glyphicon-plus"></i> <%= t(:link_new) %>
+		<% end %>
+		<% end %>
+	</div>
+	<%= paginate @admin_notices %>
+</div>

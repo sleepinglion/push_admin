@@ -1,0 +1,29 @@
+<% if notice %>
+<%= render :partial => 'layouts/notice',:locals=>{:notice=>notice} %>
+<% end %>
+<div class="sl_show">
+	<p>
+		<b><%=t(:label_title) %></b>
+		<%= @notice.title %>
+	</p>
+	<p>
+		<b><%=t(:label_content) %></b>
+		<%=simple_format @notice.notice_content.content %>
+	</p>
+	<p>
+		<b><%=t(:label_flag) %></b>
+		<%=raw flagToString(@notice.enable) %>
+	</p>
+	<p>
+  	<b><%=t(:label_created_at) %></b>
+  	<%= @notice.created_at %>
+  </p>
+  <p>
+  	<b><%=t(:label_updated_at) %></b>
+  	<%= @notice.created_at %>
+  </p>
+</div>
+<% if can? :update, Notice %>		
+<%= link_to t(:link_edit), edit_admin_notice_path(@notice) %> |
+<% end %>
+<%= link_to t(:link_list), admin_notices_path() %>
