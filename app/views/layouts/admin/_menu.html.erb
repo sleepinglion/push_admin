@@ -62,8 +62,25 @@
 		<i class="glyphicon glyphicon-comment glyphicon-white"></i>
 		<%=t(:push_prepare_message,scope:[:activerecord,:models])%><% end %></li>
 	<% end %>
-</ul>
-</li>
-<% end %>
+	</ul>
+	</li>
+	<% end %>
+
+	<% if can?(:read, Notice) || can?(:read, Recommend) %>
+	<li class="dropdown">
+		<a class="dropdown-toggle dropmenu<% if params[:controller]=='admin/notices' || params[:controller]=='admin/recommends' %> active<% end %>" data-toggle="dropdown" href="#">
+			<i class="glyphicon glyphicon-comment glyphicon-white"></i>
+			<%=t(:menu_notice)%>
+			<span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu<% if params[:controller]=='admin/notices' %> current<% end %>">
+	<% if can? :read, Notice %>
+	<li<% if params[:controller]=='admin/notices' %> class="active"<% end %>><%=link_to admin_notices_path do %>
+		<i class="glyphicon glyphicon-comment glyphicon-white"></i>
+		<%=t(:notice,scope:[:activerecord,:models])%><% end %></li>
+	<% end %>
+	</ul>
+	</li>
+	<% end %>	
 
 </ul>

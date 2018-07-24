@@ -79,6 +79,12 @@ zh-CN:
   download_reports: '선택된것 다운로드'
   insert_search_word : '검색어를 넣어주세요'
 
+
+  notice : 'Notice'
+  recommend : 'Recommend'
+
+  menu_notice : 'Notice'
+  menu_recommend : 'Recommend'
   menu_user : '会员'
   menu_push : '推'
   menu_new_user : '注册会员'
@@ -438,13 +444,15 @@ zh-CN:
       user : '会员'
       group : '会员分类'
       operator : '运营者'
-
-      kit : '套件'
-      sms : 'SMS'
-      mms : 'MMS'
-      mms_picture : 'MMS Picture'
-      mms_message : 'MMS Message'
-
+      notice : 'notice'
+      recommend : 'recommend'
+      device : 'device'
+      notice : 'notice'
+      recommend : 'recommend'      
+      push_message : 'push_message'
+      push_prepare_picture : 'push_prepare_picture'
+      push_prepare_message : 'push_prepare_message'
+      
     attributes :
       admin :
         login_id : '登录账户'
@@ -468,6 +476,9 @@ zh-CN:
         title : '标题'
         users_count : '联系用户个数'
         enable : '使用与否'
+      notice :
+        title : '标题'
+        enable : '使用与否'        
       push_message :
         title : '标题'
         content : '内容'

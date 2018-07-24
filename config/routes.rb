@@ -17,12 +17,16 @@ Rails.application.routes.draw do
   end
 
   get 'home/popup'=>'home#popup'
+  resources :notices
+  resources :recommends    
   resources :devices
   resources :users, only: [:new, :index, :edit]
 
   # 관리자
   scope 'admin', module: 'admin', as: 'admin' do
     get '/' => 'admin_home#index'
+    resources :recommends    
+    resources :notices    
     resources :groups
     resources :devices
     resources :push_messages

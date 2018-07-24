@@ -79,6 +79,12 @@ en:
   download_reports: '선택된것 다운로드'
   insert_search_word : '검색어를 넣어주세요'
 
+  
+  notice : 'Notice'
+  recommend : 'Recommend'
+
+  menu_notice : 'Notice'
+  menu_recommend : 'Recommend'
   menu_user : 'User'
   menu_push : 'Push'
   menu_login : 'Sign In'
@@ -453,6 +459,8 @@ en:
       group : 'group'
       operator : 'operator'
       device : 'device'
+      notice : 'notice'
+      recommend : 'recommend'      
       push_message : 'push_message'
       push_prepare_picture : 'push_prepare_picture'
       push_prepare_message : 'push_prepare_message'
@@ -480,6 +488,9 @@ en:
         title : 'title'
         users_count : 'users count'
         enable : 'enable'
+      notice :
+        title : 'title'
+        enable : 'enable'        
       push_message :
         title : 'title'
         content : 'content'

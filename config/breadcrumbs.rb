@@ -31,3 +31,11 @@ end
 crumb :edit_user_password do
    link t(:change_my_password), edit_user_password_path
 end
+
+crumb :notices do
+  link t(:menu_notice), notices_path
+end
+
+crumb :recommends do
+  link t(:menu_recommend), recommends_path
+end

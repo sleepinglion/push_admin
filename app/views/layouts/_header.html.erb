@@ -2,13 +2,10 @@
 	<div class="container">
 		<div class="row">
 			<h1><%= link_to t(:home_title),root_path %></h1>
-			<div id="select_language_layer">
-				<%=link_to '한국어', url_for(:locale => 'ko'),:class=>'ko' %>
-				<%=link_to 'English', url_for( :locale => 'en'),:class=>'en' %>
-				<%=link_to '汉语', url_for( :locale => 'zh-CN'),:class=>'zh-CN' %>
-			</div>
 			<nav>
 				<ul class="nav nav-pills">
+					<li><%= link_to t(:notice),notices_path %></li>
+					<li><%= link_to t(:recommend),recommends_path %></li>				
 					<% if user_signed_in? %>
 					<li><%= link_to current_user.name,edit_user_registration_path %><%= t(:welcome)%></li>
 					<li><%= link_to t(:logout),destroy_user_session_path %></li>	

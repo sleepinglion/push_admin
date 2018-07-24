@@ -1,12 +1,12 @@
 ko:
-  service_name : '인용 푸쉬 사이트'
+  service_name : '인용스탁과 매년 자산증가, 노예탈출!! 꿈이 아닙니다!!'
   meta_description : '양갈비 쑤왕'
   meta_keywords : '양갈비 쑤왕'
   meta_image : 'http://www.sleepinglion.pe.kr/sl.jpg'
   meta_url : 'http://push.sleepinglion.pe.kr'
   title_separator : '-'
   default_title : '푸시관리자'
-  site_address : '아프리카 사자굴'
+  site_address : '경기도 수원시 화서역앞'
 
   korean : '한국어'
   chineses : '중국어'
@@ -21,11 +21,11 @@ ko:
   complete : '완료'
   cancel : '취소'
   home : '홈'
-  home_title : '인용푸쉬'
-  home_main_title : '인용 푸쉬~ <br class="visible-xs" />양갈비쑤왕!'
-  home_main_description : '인용이가 푸쉬하는 사이트입니다.'
-  home_more_description : '깨끗한 웹세상을 꿈꿉니다.'
-  home_popup_description : '무질서한 웹페이지들의 종말을 기대하며<br />나만이라도 깨끗한 최고의 웹페이지를 제작합니다.'
+  home_title : '인용스탁'
+  home_main_title : '인용 스탁~ <br class="visible-xs" />양갈비쑤왕!'
+  home_main_description : '인용이가 주식하는 사이트입니다.'
+  home_more_description : '매년 1000%의 자산증가'
+  home_popup_description : '언제까지 보관료 내면서 적금을 넣을겁니까??<br />매년 1000%의 자산증가!! 인용과 함께라면 가능합니다.'
   back_to_home : '메인으로 돌아가기'
   search : '검색'
   update : '수정'
@@ -121,6 +121,11 @@ ko:
   download_reports: '선택된것 다운로드'
   insert_search_word : '검색어를 넣어주세요'
 
+  notice : '공지사항'
+  recommend : '추천주'
+
+  menu_notice : '공지사항'
+  menu_recommend : '추천주'
   menu_user : '회원관리'
   menu_push : '푸쉬관리'
   menu_new_user : '회원가입'
@@ -481,6 +486,8 @@ ko:
       operator : '운영자'
       device : '회원푸쉬토큰'
       push_message : '푸시'
+      notice : '공지사항'
+      recommend : '추천주'      
       push_prepare_picture : '준비된 이미지'
       push_prepare_message : '준비된 메시지'
 
@@ -507,6 +514,9 @@ ko:
         title : '제목'
         users_count : '해당 사용자 갯수'
         enable : '사용여부'
+      notice :
+        title : '제목'
+        enable : '사용여부'        
       push_message :
         title : '제목'
         content : '메세지'
