@@ -3,8 +3,6 @@ class Admin::NoticesController < Admin::AdminController
 
   def initialize(*params)
     super(*params)
-
-    @category = t(:menu_board,scope:[:admin_menu])
     @controller_name = t('activerecord.models.notice')
   end
 
@@ -79,6 +77,6 @@ class Admin::NoticesController < Admin::AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def admin_notice_params
-    params.require(:notice).permit(:id,:title,:count,notice_content_attributes: [:id,:content]).merge(user_id: current_admin.id)
+    params.require(:notice).permit(:id,:title,:count,notice_content_attributes: [:id,:content])
   end
 end
