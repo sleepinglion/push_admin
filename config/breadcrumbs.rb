@@ -36,6 +36,14 @@ crumb :notices do
   link t(:menu_notice), notices_path
 end
 
+crumb :notice do
+  link t(:menu_notice), notice_path
+end
+
+crumb :certifications do
+  link t(:menu_certification), certifications_path
+end
+
 crumb :recommends do
   link t(:menu_recommend), recommends_path
 end

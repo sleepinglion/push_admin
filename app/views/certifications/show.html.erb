@@ -1,0 +1,23 @@
+<% breadcrumb :certifications,@certification %>
+<% if notice %>
+<%= render :partial => 'layouts/notice',:locals=>{:notice=>notice} %>
+<% end %>
+<article id="sl_certification_show" itemscope itemprop="article" itemtype="http://schema.org/Article">
+  <div class="slboard_content">
+    <div class="sl_content_header">
+      <h3 itemprop="name"><%= @certification.title %></h3>
+    </div>
+    <div class="sl_content_main">
+      <div class="sl_content_text" itemprop="text"><%= simple_format(@certification.title) %></div>
+    </div>
+  </div>
+  <div id="sl_content_bottom_menu">
+    <%= link_to t(:link_list),certifications_path %>
+    <% if can? :update, Notice %>
+    &nbsp; | &nbsp; <%= link_to t(:link_edit), edit_certification_path(@certification),:rel=>"nofollow" %>
+    <% end %>
+    <% if can? :delete, Notice %>
+    &nbsp; | &nbsp; <%= link_to t(:link_delete), @certification, method: :delete, data: { confirm: t(:delete_confirm) },:rel=>"nofollow" %>
+    <% end %>
+  </div>
+</article>

@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :recommends    
   resources :devices
   resources :users, only: [:new, :index, :edit]
+  resources :certifications
 
   # 관리자
   scope 'admin', module: 'admin', as: 'admin' do

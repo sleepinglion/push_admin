@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180724132218) do
+ActiveRecord::Schema.define(version: 20181004001448) do
 
   create_table "admins", force: :cascade do |t|
     t.integer  "parent_id"
@@ -30,6 +30,21 @@ ActiveRecord::Schema.define(version: 20180724132218) do
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["login_id"], name: "index_admins_on_login_id", unique: true
     t.index ["nickname"], name: "index_admins_on_nickname", unique: true
+  end
+
+  create_table "certification_contents", force: :cascade do |t|
+    t.text "content", null: false
+  end
+
+  create_table "certifications", force: :cascade do |t|
+    t.integer  "user_id",                              null: false
+    t.string   "title",      limit: 60,                null: false
+    t.integer  "buy_price",             default: 0,    null: false
+    t.integer  "sell_price",            default: 0,    null: false
+    t.boolean  "enable",                default: true, null: false
+    t.integer  "count",                 default: 0,    null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|

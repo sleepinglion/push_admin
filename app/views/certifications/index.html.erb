@@ -1,0 +1,40 @@
+<% breadcrumb :certifications %>
+<div id="sl_certification_index">
+	<article class="table-responsive-lg">
+		<table width="100%" cellpadding="0" cellspacing="0" class="table table-striped table-hover">
+			<colgroup>
+				<col />
+				<col style="width:100px" />
+				<col style="width:130px" />
+			</colgroup>
+			<thead class="thead-default">
+				<tr>
+					<th class="sl_t_title"><%=t(:title,scope:[:activerecord,:attributes,:certification]) %></th>
+					<th class="text-right"><%=t(:label_count) %></th>
+					<th class="text-center"><%=t(:label_created_at) %></th>
+				</tr>
+			</thead>
+			<tbody>
+				<% unless @certifications.empty? %>
+				<% @certifications.each do |certification| %>
+				<tr>
+					<td><p><%= link_to certification.title, certification  %></p></td>
+					<td class="sl_right"><%=certification.impressionist_count(:filter=>:ip_address) %></td>
+					<td class="sl_right"><%=certification.created_at.to_date %></td>
+				</tr>
+				<% end %>
+				<% else %>
+				<tr>
+					<td colspan="4"><p><%=t(:no_data) %></p></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</article>
+	<div id="sl_bottom_menu">
+		<% if can? :create, Certification %>
+		<%= link_to t(:link_new), new_certification_path,:rel=>"nofollow" %>
+		<% end %>
+		<%= paginate @certifications %>
+	</div>
+</div>

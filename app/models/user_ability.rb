@@ -4,6 +4,6 @@ class UserAbility
         cannot :manage, :all
         can :create, [User]
         can :complete, [User]
-        can :manage, [User, Device] if user
+        can :manage, [User, Device, Certification] if user
     end
 end
