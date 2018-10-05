@@ -1,10 +1,10 @@
-<%= form_for [:admin,@notice] do |f| %>
-<% if @notice.errors.any? %>
+<%= form_for [:admin,@admin_notice] do |f| %>
+<% if @admin_notice.errors.any? %>
 <div id="error_explanation" class="alert alert-danger">
 	<a href="#" class="close" data-dismiss="alert">&times;</a>
-	<h2><%= pluralize(@notice.errors.count, "error") %> prohibited this request from being saved:</h2>
+	<h2><%= pluralize(@admin_notice.errors.count, "error") %> prohibited this request from being saved:</h2>
 	<ul>
-		<% @notice.errors.full_messages.each do |msg| %>
+		<% @admin_notice.errors.full_messages.each do |msg| %>
 		<li>
 			<%= msg %>
 		</li>
