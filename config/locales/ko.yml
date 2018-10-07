@@ -124,11 +124,13 @@ ko:
 
   notice : '공지사항'
   recommend : '추천주'
+  certification : '수익인증'
 
   menu_notice : '공지사항'
   menu_recommend : '추천주'
   menu_user : '회원관리'
   menu_push : '푸쉬관리'
+  menu_certification: '수익인증'
   menu_new_user : '회원가입'
   menu_my_page : '마이 페이지'
   menu_new_user_password : '비밀번호 찾기'
@@ -488,7 +490,8 @@ ko:
       device : '회원푸쉬토큰'
       push_message : '푸시'
       notice : '공지사항'
-      recommend : '추천주'      
+      recommend : '추천주'
+      certification : '수익인증'      
       push_prepare_picture : '준비된 이미지'
       push_prepare_message : '준비된 메시지'
 
@@ -534,6 +537,14 @@ ko:
         user_id : '사용자'
         device_id : '장치 ID'
         registration_id : '등록 ID'
+      certification :
+        title : '주식명'    
+        buy_date : '매입일'
+        buy_price : '매입가'        
+        sell_date : '매도일'
+        sell_price : '매도가'
+      certification_content :
+        content : '내용'        
       user :
         group_id : '회원구분'
         login_id : '아이디'

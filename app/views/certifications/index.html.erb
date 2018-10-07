@@ -10,7 +10,11 @@
 			<thead class="thead-default">
 				<tr>
 					<th class="sl_t_title"><%=t(:title,scope:[:activerecord,:attributes,:certification]) %></th>
-					<th class="text-right"><%=t(:label_count) %></th>
+					<th><%=t(:buy_date,scope:[:activerecord,:attributes,:certification])  %></th>
+					<th><%=t(:buy_price,scope:[:activerecord,:attributes,:certification])  %></th>						
+					<th><%=t(:sell_date,scope:[:activerecord,:attributes,:certification]) %></th>
+					<th><%=t(:sell_price,scope:[:activerecord,:attributes,:certification])  %></th>					
+					<th class="text-right"><%=t(:label_view_count) %></th>
 					<th class="text-center"><%=t(:label_created_at) %></th>
 				</tr>
 			</thead>
@@ -19,6 +23,10 @@
 				<% @certifications.each do |certification| %>
 				<tr>
 					<td><p><%= link_to certification.title, certification  %></p></td>
+					<td><%=certification.buy_date %></td>
+					<td><%=certification.buy_price %></td>						
+					<td><%=certification.sell_date %></td>
+					<td><%=certification.sell_price %></td>					
 					<td class="sl_right"><%=certification.impressionist_count(:filter=>:ip_address) %></td>
 					<td class="sl_right"><%=certification.created_at.to_date %></td>
 				</tr>

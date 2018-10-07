@@ -7,7 +7,7 @@
 					<li><%= link_to t(:notice),notices_path %></li>
 					<li><%= link_to t(:recommend),recommends_path %></li>				
 					<% if user_signed_in? %>
-					<li><%= link_to t(:certifications),certifications_path %></li>					
+					<li><%= link_to t(:certification),certifications_path %></li>					
 					<li><%= link_to current_user.name,edit_user_registration_path %><%= t(:welcome)%></li>
 					<li><%= link_to t(:logout),destroy_user_session_path %></li>	
 					<% else %>

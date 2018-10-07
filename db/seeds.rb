@@ -19,6 +19,12 @@ RolesAdmin.create!(:role_id=>2,:admin_id=>3)
 RolesAdmin.create!(:role_id=>2,:admin_id=>4)
 RolesAdmin.create!(:role_id=>4,:admin_id=>5)
 
+InvestmentType.create!(:id=>1,:title=>'단기',:enable=>true)
+InvestmentType.create!(:id=>2,:title=>'중기',:enable=>true)
+InvestmentType.create!(:id=>3,:title=>'장기',:enable=>true)
+InvestmentType.create!(:id=>4,:title=>'초장기',:enable=>true)
+InvestmentType.create!(:id=>5,:title=>'초단기',:enable=>true)
+
 app = Rpush::Gcm::App.new
 app.name = "android_app"
 app.auth_key = "AAAAMWgqcXM:APA91bFFjJN5CvxPeKMW_sbxh8h3wZ0PDoJYHZzooaZUcbdfB4cuht3FqFevKVF7dojtcCApm77nFN-Mi59BnbRK7yUo3jqxYoW_ofDw55cOCk9zBym5BCAc7M6LvxMChYDGddNfs7fl"

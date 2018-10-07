@@ -84,6 +84,6 @@ class CertificationsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def certification_params
-    params.require(:certification).permit(:id,:title,certification_content_attributes: [:id,:content])
+    params.require(:certification).permit(:id,:title,:buy_date,:buy_price,:sell_date,:sell_price,certification_content_attributes: [:id,:content]).merge(user_id: current_user.id)
   end
 end

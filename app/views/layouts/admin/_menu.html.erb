@@ -39,6 +39,23 @@
 	<% end %>
 
 
+	<% if can?(:read, Recommend) %>
+	<li class="dropdown">
+		<a class="dropdown-toggle dropmenu<% if params[:controller]=='admin/recommends' || params[:controller]=='admin/recommends' %> active<% end %>" data-toggle="dropdown" href="#">
+			<i class="glyphicon glyphicon-comment glyphicon-white"></i>
+			<%=t(:menu_recommend)%>
+			<span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu<% if params[:controller]=='admin/recommends' %> current<% end %>">
+	<% if can? :read, Recommend %>
+	<li<% if params[:controller]=='admin/recommends' %> class="active"<% end %>><%=link_to admin_recommends_path do %>
+		<i class="glyphicon glyphicon-comment glyphicon-white"></i>
+		<%=t(:recommend,scope:[:activerecord,:models])%><% end %></li>
+	<% end %>	
+	</ul>
+	</li>
+	<% end %>	
+
 	<% if can?(:read, PushMessage) || can?(:read, PushPreparePicture) || can?(:read, PushPrepareMessage) %>
 	<li class="dropdown">
 		<a class="dropdown-toggle dropmenu<% if params[:controller]=='admin/push_messages' || params[:controller]=='admin/push_prepare_pictures' || params[:controller]=='admin/push_prepare_messages' %> active<% end %>" data-toggle="dropdown" href="#">
@@ -66,11 +83,11 @@
 	</li>
 	<% end %>
 
-	<% if can?(:read, Notice) || can?(:read, Recommend) %>
+	<% if can?(:read, Notice) || can?(:read, Faq) %>
 	<li class="dropdown">
 		<a class="dropdown-toggle dropmenu<% if params[:controller]=='admin/notices' || params[:controller]=='admin/recommends' %> active<% end %>" data-toggle="dropdown" href="#">
 			<i class="glyphicon glyphicon-comment glyphicon-white"></i>
-			<%=t(:menu_notice)%>
+			<%=t(:menu_board)%>
 			<span class="caret"></span>
 		</a>
 		<ul class="dropdown-menu<% if params[:controller]=='admin/notices' %> current<% end %>">
@@ -79,6 +96,11 @@
 		<i class="glyphicon glyphicon-comment glyphicon-white"></i>
 		<%=t(:notice,scope:[:activerecord,:models])%><% end %></li>
 	<% end %>
+	<% if can? :read, Faq %>
+	<li<% if params[:controller]=='admin/faqs' %> class="active"<% end %>><%=link_to admin_faqs_path do %>
+		<i class="glyphicon glyphicon-comment glyphicon-white"></i>
+		<%=t(:faq,scope:[:activerecord,:models])%><% end %></li>
+	<% end %>	
 	</ul>
 	</li>
 	<% end %>	

@@ -3,7 +3,9 @@ class CreateCertifications < ActiveRecord::Migration
     create_table :certifications do |t|
       t.references :user, :null=>false      
       t.string :title, :limit=>60, :null=>false
-      t.integer :buy_price, :null=>false, :default=>0      
+      t.date :buy_date, :null=>false     
+      t.integer :buy_price, :null=>false, :default=>0
+      t.date :sell_date, :null=>false         
       t.integer :sell_price, :null=>false, :default=>0
       t.boolean :enable, :null=>false, :default=>true
       t.integer :count, :null=>false, :default=>0

@@ -36,16 +36,8 @@ crumb :notices do
   link t(:menu_notice), notices_path
 end
 
-crumb :notice do
-  link t(:menu_notice), notice_path
-<<<<<<< HEAD
-end
-
 crumb :certifications do
   link t(:menu_certification), certifications_path
-=======
-  parent :notices
->>>>>>> 9f50eec633c2962af4f5aa30a9815441ace1e385
 end
 
 crumb :recommends do

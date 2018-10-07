@@ -1,0 +1,56 @@
+<%= form_for [:admin,@admin_recommend] do |f| %>
+<% if @admin_recommend.errors.any? %>
+<div id="error_explanation" class="alert alert-danger">
+	<a href="#" class="close" data-dismiss="alert">&times;</a>
+	<h2><%= pluralize(@admin_recommend.errors.count, "error") %> prohibited this request from being saved:</h2>
+	<ul>
+		<% @admin_recommend.errors.full_messages.each do |msg| %>
+		<li>
+			<%= msg %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+<div class="form-group">
+	<%= f.label :investment_type_id %>
+	<%= f.select :investment_type_id,options_from_collection_for_select(InvestmentType.where(:enable=>true).all, 'id', 'title',@admin_recommend.investment_type_id),{},{:class=>"form-control"} %>
+</div>
+<div class="form-group">
+	<%= f.label :title %>
+	<%= f.text_field :title,:class=>"form-control",:required=>"required" %>
+</div>
+<div class="form-group">
+	<%= f.label :buy_date %>
+	<%= f.date_field :buy_date,:class=>"form-control",:required=>"required" %>
+</div>
+<div class="form-group">
+	<%= f.label :buy_price %>
+	<%= f.number_field :buy_price,:class=>"form-control",:required=>"required" %>
+</div>
+<div class="form-group">
+	<%= f.label :sell_date %>
+	<%= f.date_field :sell_date,:class=>"form-control",:required=>"required" %>
+</div>
+<div class="form-group">
+	<%= f.label :sell_price %>
+	<%= f.number_field :sell_price,:class=>"form-control",:required=>"required" %>
+</div>
+<%= f.fields_for :notice_content do |c| %>
+<div class="form-group">
+	<%= c.label :content %>
+	<%= c.text_area :content,:id=>"sl_content",:class=>"form-control",:rows=>10,:cols=>50,:required=>"required" %>
+</div>
+<% end %>
+<div class="form-group">
+	<%= f.label :free %>
+	<%= f.check_box :free %>
+</div>
+<div class="form-group">
+	<%= f.label :enable %>
+	<%= f.check_box :enable %>
+</div>
+<div class="form-group actions">
+	<%= f.submit :class=>"btn btn-primary" %>
+</div>
+<% end %>

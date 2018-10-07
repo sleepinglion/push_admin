@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181004001448) do
+ActiveRecord::Schema.define(version: 20181005005449) do
 
   create_table "admins", force: :cascade do |t|
     t.integer  "parent_id"
@@ -39,7 +39,9 @@ ActiveRecord::Schema.define(version: 20181004001448) do
   create_table "certifications", force: :cascade do |t|
     t.integer  "user_id",                              null: false
     t.string   "title",      limit: 60,                null: false
+    t.date     "buy_date",                             null: false
     t.integer  "buy_price",             default: 0,    null: false
+    t.date     "sell_date",                            null: false
     t.integer  "sell_price",            default: 0,    null: false
     t.boolean  "enable",                default: true, null: false
     t.integer  "count",                 default: 0,    null: false
@@ -69,6 +71,57 @@ ActiveRecord::Schema.define(version: 20181004001448) do
     t.boolean  "enable",                      default: true, null: false
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
+  end
+
+  create_table "faq_categories", force: :cascade do |t|
+    t.integer  "faqs_count", default: 0,    null: false
+    t.boolean  "enable",     default: true, null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "faq_category_translations", force: :cascade do |t|
+    t.integer  "faq_category_id", null: false
+    t.string   "locale",          null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "title"
+    t.index ["faq_category_id"], name: "index_faq_category_translations_on_faq_category_id"
+    t.index ["locale"], name: "index_faq_category_translations_on_locale"
+  end
+
+  create_table "faq_content_translations", force: :cascade do |t|
+    t.integer  "faq_content_id", null: false
+    t.string   "locale",         null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.text     "content"
+    t.index ["faq_content_id"], name: "index_faq_content_translations_on_faq_content_id"
+    t.index ["locale"], name: "index_faq_content_translations_on_locale"
+  end
+
+  create_table "faq_contents", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "faq_translations", force: :cascade do |t|
+    t.integer  "faq_id",     null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "title"
+    t.index ["faq_id"], name: "index_faq_translations_on_faq_id"
+    t.index ["locale"], name: "index_faq_translations_on_locale"
+  end
+
+  create_table "faqs", force: :cascade do |t|
+    t.integer  "faq_category_id",                null: false
+    t.integer  "count",           default: 0,    null: false
+    t.boolean  "enable",          default: true, null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.index ["faq_category_id"], name: "index_faqs_on_faq_category_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -105,6 +158,13 @@ ActiveRecord::Schema.define(version: 20181004001448) do
     t.index ["user_id"], name: "index_impressions_on_user_id"
   end
 
+  create_table "investment_types", force: :cascade do |t|
+    t.string   "title",      limit: 60,                null: false
+    t.boolean  "enable",                default: true, null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+  end
+
   create_table "notice_contents", force: :cascade do |t|
     t.text "content", null: false
   end
@@ -137,11 +197,18 @@ ActiveRecord::Schema.define(version: 20181004001448) do
   end
 
   create_table "recommends", force: :cascade do |t|
-    t.string   "title",      limit: 60,                null: false
-    t.boolean  "enable",                default: true, null: false
-    t.integer  "count",                 default: 0,    null: false
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.integer  "admin_id",                                     null: false
+    t.integer  "investment_type_id",            default: 1,    null: false
+    t.string   "title",              limit: 60,                null: false
+    t.date     "buy_date",                                     null: false
+    t.integer  "buy_price",                     default: 0,    null: false
+    t.date     "sell_date",                                    null: false
+    t.integer  "sell_price",                    default: 0,    null: false
+    t.boolean  "free",                          default: true, null: false
+    t.boolean  "enable",                        default: true, null: false
+    t.integer  "count",                         default: 0,    null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
   end
 
   create_table "roles", force: :cascade do |t|

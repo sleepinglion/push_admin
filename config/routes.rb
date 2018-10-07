@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     get '/' => 'admin_home#index'
     resources :recommends    
     resources :notices    
+    resources :faqs    
     resources :groups
     resources :devices
     resources :push_messages
