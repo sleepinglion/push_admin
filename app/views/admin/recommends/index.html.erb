@@ -25,7 +25,7 @@
 		</thead>
 		<tbody>
 			<% unless @admin_recommends.empty? %>
-			<% @admin_recommend.each do |recommend| %>
+			<% @admin_recommends.each do |recommend| %>
 			<tr>
 				<td><%= link_to recommend.id,admin_recommend_path(recommend) %></td>
 				<td class="mw"><%= link_to recommend.title,admin_recommend_path(recommend) %></td>
