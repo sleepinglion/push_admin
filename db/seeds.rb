@@ -9,9 +9,9 @@ Role.create!(:id=>2,:title=>'operator')
 Role.create!(:id=>3,:title=>'exporter')
 Role.create!(:id=>4,:title=>'reader')
 
-Group.create!(id: 1, title: '웹가입 회원', enable: true)
-Group.create!(id: 2, title: '앱가입 회원', enable: true)
-Group.create!(id: 3, title: '외부연계 회원', enable: true)
+Group.create!(id: 1, title: '무료회원', enable: true)
+Group.create!(id: 2, title: '유료회원', enable: true)
+Group.create!(id: 3, title: 'VIP 회원', enable: true)
 
 RolesAdmin.create!(:role_id=>1,:admin_id=>1)
 RolesAdmin.create!(:role_id=>1,:admin_id=>2)

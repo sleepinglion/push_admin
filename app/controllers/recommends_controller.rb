@@ -84,6 +84,6 @@ class RecommendsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def recommend_params
-    params.require(:recommend).permit(:id,:title,recommend_content_attributes: [:id,:content])
+    params.require(:recommend).permit(:id,:title,:title,:buy_date,:buy_price,:sell_date,:sell_price,recommend_content_attributes: [:id,:content]).merge(admin_id: current_admin.id)
   end
 end

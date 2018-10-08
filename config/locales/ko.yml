@@ -545,6 +545,15 @@ ko:
         sell_price : '매도가'
       certification_content :
         content : '내용'        
+      recommend : 
+        investment_type_id : '투자유형'
+        title : '주식명'
+        buy_date : '매입일'
+        buy_price : '매입가'        
+        sell_date : '매도일'
+        sell_price : '매도가'                
+      recommend_content :
+        content : '내용'
       user :
         group_id : '회원구분'
         login_id : '아이디'

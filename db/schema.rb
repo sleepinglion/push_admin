@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181005005449) do
+ActiveRecord::Schema.define(version: 20181006095840) do
 
   create_table "admins", force: :cascade do |t|
     t.integer  "parent_id"
@@ -204,11 +204,17 @@ ActiveRecord::Schema.define(version: 20181005005449) do
     t.integer  "buy_price",                     default: 0,    null: false
     t.date     "sell_date",                                    null: false
     t.integer  "sell_price",                    default: 0,    null: false
-    t.boolean  "free",                          default: true, null: false
     t.boolean  "enable",                        default: true, null: false
     t.integer  "count",                         default: 0,    null: false
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
+  end
+
+  create_table "recommends_groups", force: :cascade do |t|
+    t.integer "recommend_id"
+    t.integer "group_id"
+    t.index ["recommend_id", "group_id"], name: "index_recommends_groups_on_recommend_id_and_group_id", unique: true
+    t.index ["recommend_id"], name: "index_recommends_groups_on_recommend_id", unique: true
   end
 
   create_table "roles", force: :cascade do |t|
