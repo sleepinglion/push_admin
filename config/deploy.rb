@@ -23,17 +23,5 @@ namespace :deploy do
     end
   end
 
-  desc 'Refresh sitemap'
-  task :refresh_sitemap do
-    on roles(:app), in: :sequence, wait: 1 do
-      within release_path do
-        with rails_env: (fetch(:rails_env) || fetch(:stage)) do
-          execute :rake, 'sitemap:refresh'
-        end
-      end
-    end
-  end
-
-  #after :finishing, 'deploy:refresh_sitemap'
   after :finishing, 'deploy:cleanup'
 end

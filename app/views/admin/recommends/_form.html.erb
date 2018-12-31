@@ -40,10 +40,10 @@
 	<%= f.label :sell_price %>
 	<%= f.number_field :sell_price,:class=>"form-control",:required=>"required" %>
 </div>
-<%= f.fields_for :notice_content do |c| %>
+<%= f.fields_for :recommend_content do |c| %>
 <div class="form-group">
 	<%= c.label :content %>
-	<%= c.text_area :content,:id=>"sl_content",:class=>"form-control",:rows=>10,:cols=>50,:required=>"required" %>
+	<%= c.text_area :content,:id=>"sl_content",:class=>"form-control",:rows=>10,:cols=>50 %>
 </div>
 <% end %>
 <div class="form-group">

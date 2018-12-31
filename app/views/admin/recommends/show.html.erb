@@ -20,7 +20,7 @@
   	<%= @admin_recommend.created_at %>
   </p>
 </div>
-<% if can? :update, Notice %>		
-<%= link_to t(:link_edit), edit_admin_notice_path(@admin_recommend) %> |
+<% if can? :update, Recommend %>		
+<%= link_to t(:link_edit), edit_admin_recommend_path(@admin_recommend) %> |
 <% end %>
-<%= link_to t(:link_list), admin_notices_path() %>
+<%= link_to t(:link_list), admin_recommends_path() %>
